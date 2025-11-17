@@ -626,26 +626,44 @@ Integrações
       icon: <Palette size={24} strokeWidth={2} />,
       title: 'Figma',
       status: 'Em teste',
-      description: 'Acessar design system e componentes Livelo',
-      ide: 'Em desenvolvimento',
+      description: 'Integração com Figma para acessar design system e componentes',
+      ide: 'VS Code, Amazon Q',
       testedBy: 'Time DX',
       details: {
-        subtitle: 'Acesso ao design system e componentes do Figma',
-        overview: 'MCP em fase de testes para integrar designs do Figma com desenvolvimento, facilitando acesso a componentes e tokens do design system.',
+        subtitle: '🎨 Figma MCP',
+        overview: `Integração com Figma para acessar design system e componentes\n\n🎯 O que faz\n\nO Figma MCP permite que você:\n\n- Acesse componentes do design system\n- Consulte tokens de design\n- Extraia especificações de UI\n- Sincronize designs com código`,
         features: [
-          'Consultar componentes do design system',
-          'Extrair tokens de design',
-          'Gerar código a partir de designs',
-          'Sincronizar com biblioteca de componentes'
-        ],
-        howToUse: [
-          'Aguardando homologação',
-          'Testes em andamento pelo Time DX'
+          'Acesse componentes do design system',
+          'Consulte tokens de design',
+          'Extraia especificações de UI',
+          'Sincronize designs com código'
         ],
         requirements: [
-          'Amazon Q Developer',
           'Acesso ao Figma da Livelo',
-          'Plugins do Figma configurados'
+          'Token de API do Figma',
+          'Amazon Q ou VS Code configurado'
+        ],
+        howToUse: [
+          '1. Gerar Token do Figma',
+          'Acesse Figma Settings',
+          'Vá para "Personal access tokens"',
+          'Clique em "Create new token"',
+          'Copie o token gerado',
+          '2. Configuração',
+          '{',
+          '  "servers": {',
+          '    "figma": {',
+          '      "command": "npx",',
+          '      "args": ["@modelcontextprotocol/server-figma"],',
+          '      "env": {',
+          '        "FIGMA_TOKEN": "${FIGMA_TOKEN}",',
+          '        "FIGMA_TEAM_ID": "livelo-team-id"',
+          '      }',
+          '    }',
+          '  }',
+          '}',
+          '🔬 Status',
+          'Em exploração pelo Time DX'
         ]
       }
     },
@@ -654,24 +672,42 @@ Integrações
       title: 'Dynatrace',
       status: 'Em teste',
       description: 'Observabilidade e monitoramento em tempo real',
-      ide: 'Em desenvolvimento',
-      testedBy: '-',
+      ide: 'VS Code, Amazon Q',
+      testedBy: 'Em análise - aguardando validação',
       details: {
-        subtitle: 'Integração com Dynatrace para observabilidade',
-        overview: 'MCP para consultar métricas, logs e traces do Dynatrace diretamente pelo Amazon Q.',
+        subtitle: '📊 Dynatrace MCP',
+        overview: `Integração com Dynatrace para observabilidade e monitoramento\n\n🎯 O que faz\n\nO Dynatrace MCP permite que você:\n\n- Consulte métricas de aplicação\n- Acesse logs e traces\n- Monitore performance\n- Crie alertas personalizados`,
         features: [
-          'Consultar métricas em tempo real',
-          'Analisar logs e traces',
-          'Criar alertas',
-          'Gerar dashboards'
-        ],
-        howToUse: [
-          'Aguardando desenvolvimento completo'
+          'Consulte métricas de aplicação',
+          'Acesse logs e traces',
+          'Monitore performance',
+          'Crie alertas personalizados'
         ],
         requirements: [
-          'Amazon Q Developer',
-          'Acesso ao Dynatrace',
-          'API tokens configurados'
+          'Acesso ao Dynatrace da Livelo',
+          'Token de API do Dynatrace',
+          'Amazon Q ou VS Code configurado'
+        ],
+        howToUse: [
+          '1. Gerar Token do Dynatrace',
+          'Acesse Dynatrace Settings',
+          'Vá para "Access tokens"',
+          'Crie novo token com permissões necessárias',
+          '2. Configuração',
+          '{',
+          '  "servers": {',
+          '    "dynatrace": {',
+          '      "command": "npx",',
+          '      "args": ["@modelcontextprotocol/server-dynatrace"],',
+          '      "env": {',
+          '        "DYNATRACE_TOKEN": "${DYNATRACE_TOKEN}",',
+          '        "DYNATRACE_URL": "https://livelo.dynatrace.com"',
+          '      }',
+          '    }',
+          '  }',
+          '}',
+          '🔬 Status',
+          'Em análise - aguardando validação'
         ]
       }
     }
@@ -945,66 +981,52 @@ Checklist de Qualidade
     {
       icon: '💬',
       title: 'Chat e Conversação',
-      description: 'Interação natural com código para explicações, geração e debug',
-      subtitle: 'Como usar o chat do Amazon Q para interagir com seu código',
-      overview: 'O chat do Amazon Q permite interação natural com seu código através de conversas em linguagem natural. É a interface principal para fazer perguntas, solicitar código e obter explicações.',
-      howToUse: [
-        'Abrir o Chat',
-        'Fazer Perguntas',
-        'Gerar Código',
-        'Explicar Código Existente'
-      ]
+      description: 'Como usar o chat do Amazon Q para interagir com seu código',
+      subtitle: '💬 Chat e Conversação',
+      overview: `O chat do Amazon Q permite interação natural com seu código através de conversas em linguagem natural. É a interface principal para fazer perguntas, solicitar código e obter explicações.\n\n🎯 Overview\n\nO chat do Amazon Q permite interação natural com seu código através de conversas em linguagem natural. É a interface principal para fazer perguntas, solicitar código e obter explicações.\n\n🚀 Como Usar\n\n1. Abrir o Chat\n\nVS Code: Painel lateral do Amazon Q\nIntelliJ: Janela de ferramentas Amazon Q\nCLI: q chat\n\n2. Fazer Perguntas\n\nDigite perguntas em linguagem natural:\n\n"Explique este código"\n"Como posso otimizar esta função?"\n"Crie testes para esta classe"\n"Refatore este método seguindo SOLID"\n\n3. Adicionar Contexto\n\nUse @ para referenciar arquivos específicos:\n\n"Explique o @UserService.java"\n"Compare @UserController.java com @UserService.java"\n"Analise todos os arquivos em @src/main/java/com/livelo/user/"\n\n💡 Tipos de Interação\n\nExplicação de Código\n\n"O que faz este método?"\n"Explique a lógica desta classe"\n"Como funciona este algoritmo?"\n\nGeração de Código\n\n"Crie um service para gerenciar usuários"\n"Implemente um endpoint REST para cadastro"\n"Gere um DTO para esta entidade"\n\nRefatoração\n\n"Refatore este código seguindo Clean Code"\n"Aplique padrão Strategy nesta classe"\n"Extraia esta lógica para um método separado"\n\nDebug e Troubleshooting\n\n"Por que este código não funciona?"\n"Como resolver este erro de NullPointer?"\n"Otimize esta query que está lenta"\n\n🎯 Comandos Especiais\n\nReferências de Contexto\n\n| Comando | Descrição | Exemplo |\n|---------|-----------|---------|\n| @arquivo.java | Referencia arquivo específico | @UserService.java |\n| @pasta/ | Referencia pasta inteira | @src/main/java/ |\n| @workspace | Contexto do workspace | Automático |\n\nComandos de Chat\n\n| Comando | Descrição |\n|---------|-----------|\n| /clear | Limpa histórico do chat |\n| /help | Mostra ajuda |\n| /explain | Força modo explicação |\n\n💻 Exemplos Práticos\n\nExemplo 1: Análise de Código\n\nInput:\n\nAnalise este método e sugira melhorias:\n\n@UserService.java\n\nOutput:\n\nAnalisando o UserService.java, identifiquei algumas oportunidades de melhoria:\n\n1. **Injeção de Dependência**: Use constructor injection em vez de @Autowired\n2. **Validação**: Adicione validação de entrada nos métodos públicos\n3. **Tratamento de Erro**: Implemente tratamento específico para UserNotFoundException\n4. **Logs**: Adicione logs estruturados para auditoria\n\nAqui está uma versão refatorada:\n[código melhorado]\n\n💡 Dicas para Melhores Resultados\n\nSeja Específico\n\n❌ "Melhore este código"\n✅ "Refatore este método para reduzir complexidade ciclomática e melhorar legibilidade"\n\nForneça Contexto\n\n❌ "Crie um service"\n✅ "Crie um UserService que gerencie CRUD de usuários, integre com banco PostgreSQL e envie eventos para Kafka"\n\nUse Exemplos\n\n❌ "Implemente validação"\n✅ "Implemente validação similar ao @UserController.java, mas para dados de produto"\n\n📊 Métricas de Uso\n\nTipos de Perguntas Mais Comuns\n\nExplicação de código (40%)\nGeração de código (30%)\nDebug e troubleshooting (20%)\nRefatoração (10%)\n\nTaxa de Satisfação\n\nExplicações: 95%\nCódigo gerado: 85%\nSoluções de debug: 80%`
     },
     {
       icon: '🧩',
       title: 'Rules',
-      description: 'Define padrões automaticamente para garantir consistência no time',
-      subtitle: 'Como criar e usar Rules para padronizar seu desenvolvimento',
-      overview: 'Rules permitem definir padrões e guidelines que o Amazon Q seguirá automaticamente em todas as interações, garantindo consistência no time.',
-      howToUse: [
-        'Criar arquivo .amazonq/rules/',
-        'Definir padrões em Markdown',
-        'Amazon Q aplica automaticamente',
-        'Manter atualizado com evolução do projeto'
-      ]
+      description: 'Defina regras que o Amazon Q deve seguir automaticamente',
+      subtitle: '📏 Rules',
+      overview: `Rules são arquivos Markdown que descrevem:\n\n- Padrões de código do seu time\n- Convenções de nomenclatura\n- Arquitetura e estrutura\n- Boas práticas específicas\n\nAmazon Q usa essas rules automaticamente como contexto em todas as conversas dentro do projeto.\n\n🎯 O que são Rules?\n\nRules são arquivos Markdown que descrevem padrões, convenções, arquitetura e boas práticas do seu time.\n\n🚀 Como Criar Rules\n\nOpção 1: Via Interface do Amazon Q\n- Abra o chat do Amazon Q\n- Clique no botão Rules na caixa de entrada\n- Selecione Create new rule\n- Digite um nome para a rule (ex: livelo-standards.md)\n- Escreva o conteúdo da rule no editor\n- Salve o arquivo\n\nOpção 2: Via Sistema de Arquivos\n- Na raiz do projeto, crie a pasta: .amazonq/rules/\n- Crie um arquivo Markdown (ex: coding-standards.md)\n- Escreva as regras em linguagem natural\n- Salve o arquivo\n\n📁 Estrutura de Pastas\n\nseu-projeto/\n├── .amazonq/\n│   └── rules/\n│       ├── coding-standards.md\n│       ├── security-rules.md\n│       └── architecture-patterns.md\n├── src/\n└── README.md\n\n⚙️ Gerenciar Rules\n\nAtivar/Desativar rules:\n- Abra o chat do Amazon Q\n- Clique no botão Rules\n- Clique em uma rule para ativar/desativar:\n  - ✅ Com check = ativa\n  - ⬜ Sem check = inativa\n\n📝 Exemplos de Rules\n\nExemplo 1: Padrões Livelo\nArquivo: .amazonq/rules/livelo-standards.md\n\n# Livelo Coding Standards\n\n## Nomenclatura\n- Use camelCase para variáveis e métodos\n- Use PascalCase para classes\n- Variáveis de negócio em português (ex: valorCashback)\n- Variáveis técnicas em inglês (ex: httpClient)\n\n## Arquitetura\n- Siga Clean Architecture\n- Controllers não devem acessar repositories diretamente\n- Use casos de uso (UseCases) para lógica de negócio\n- Domain não deve depender de frameworks\n\n## Segurança\n- Nunca logue dados sensíveis (CPF, email, senha)\n- Use logger estruturado, não System.out.println\n- Sempre valide inputs de usuário\n- Anote dados pessoais com @PersonalData\n\n## Testes\n- Use padrão AAA (Arrange, Act, Assert)\n- Nomes de testes em português descrevendo o cenário\n- Sempre teste casos de erro\n- Use Pact para testes de contrato\n\n## Logs\n- Sempre inclua correlation-id\n- Use níveis apropriados (INFO, WARN, ERROR)\n- Estruture logs em JSON\n\n💡 Dicas de Uso\n\nSeja específico\n❌ "Use boas práticas"\n✅ "Use logger estruturado com correlation-id em todos os logs"\n\nOrganize por tópicos\n- Crie múltiplos arquivos para diferentes áreas\n- Mantenha cada rule focada em um tema\n- Use nomes descritivos para os arquivos\n\nMantenha atualizado\n- Revise rules periodicamente\n- Atualize conforme padrões evoluem\n- Remova rules obsoletas`
     },
     {
       icon: '🤖',
       title: 'Custom Agents',
-      description: 'Assistentes personalizáveis para workflows especializados',
-      subtitle: 'Crie agentes customizados para tarefas específicas',
-      overview: 'Custom Agents são assistentes configurados para workflows específicos, com ferramentas e contexto pré-definidos.',
-      howToUse: [
-        'Definir objetivo do agente',
-        'Configurar ferramentas disponíveis',
-        'Adicionar contexto específico',
-        'Testar e refinar comportamento'
-      ]
+      description: 'Assistentes IA personalizáveis para casos específicos',
+      subtitle: '🤖 Custom Agents',
+      overview: `Custom Agents são assistentes IA personalizáveis que você pode configurar para casos de uso e workflows específicos no Amazon Q Developer CLI.\n\nEm vez de usar um assistente genérico que requer contexto extensivo, Custom Agents permitem pré-configurar o conjunto certo de ferramentas, permissões e contexto para diferentes cenários.\n\n🎯 Exemplos de Uso\n\n| Tipo de Agent | Descrição | Casos de Uso |\n|---------------|-----------|---------------|\n| AWS Specialist | Acesso a ferramentas e documentação AWS | Gerenciamento de infraestrutura |\n| Code Reviewer | Ferramentas específicas de linting e análise | Revisão de código automatizada |\n| Project-Specific | Documentação e scripts customizados do projeto | Workflows específicos do projeto |\n\n🚀 Como Criar\n\nMétodo 1: Geração com IA\n\n# No chat do Amazon Q CLI\n/agent generate\n\nO Amazon Q irá:\n- Perguntar nome e descrição do agent\n- Solicitar escopo (local/global)\n- Gerar configuração automaticamente\n- Abrir editor para revisão\n\nMétodo 2: Criação Manual\n\n# No chat do Amazon Q CLI\n/agent create --name meu-agent\n\n📁 Localização dos Arquivos\n\nAgents Globais\n~/.aws/amazonq/cli-agents/{agent-name}.json\nDisponíveis em todos os projetos\n\nAgents do Projeto\n.amazonq/cli-agents/{agent-name}.json\nDisponíveis apenas no projeto atual\n\n⚙️ Configuração Básica\n\nExemplo Simples\n\n{\n  "name": "meu-agent",\n  "description": "Agent especializado em desenvolvimento Python",\n  "tools": ["fs_read", "fs_write", "execute_bash"],\n  "allowedTools": ["fs_read"],\n  "toolsSettings": {\n    "execute_bash": {\n      "allowedCommands": ["git status", "pytest"]\n    }\n  }\n}\n\nExemplo Avançado: AWS Specialist\n\n{\n  "name": "aws-specialist",\n  "description": "Agent especializado em AWS com acesso a ferramentas específicas",\n  "tools": ["fs_read", "fs_write", "execute_bash", "use_aws"],\n  "allowedTools": ["fs_read", "use_aws"],\n  "toolsSettings": {\n    "use_aws": {\n      "allowedServices": ["s3", "lambda", "ec2", "dynamodb"],\n      "deniedServices": ["iam", "organizations"]\n    },\n    "execute_bash": {\n      "allowedCommands": ["aws s3 ls", "aws lambda list-functions"],\n      "allowReadOnly": true\n    }\n  },\n  "resources": [\n    "docs/aws-architecture.md",\n    "infrastructure/**/*.tf"\n  ]\n}\n\n🔧 Comandos Disponíveis\n\n| Comando | Descrição |\n|---------|-----------|\n| /agent list | Lista todos os agents disponíveis |\n| /agent create --name [nome] | Cria novo agent |\n| /agent generate | Gera agent com IA |\n| /agent schema | Mostra schema JSON |\n| /agent edit [nome] | Edita agent existente |\n\n💡 Benefícios\n\nOtimização de Workflow\n- Agents personalizados para tarefas específicas\n- Pré-configuração de ferramentas necessárias\n- Contexto automático relevante\n\nMenos Interrupções\n- Pré-aprovação de ferramentas confiáveis\n- Redução de prompts de permissão\n- Fluxo de trabalho mais fluido\n\nColaboração em Equipe\n- Compartilhamento via controle de versão\n- Padronização de ambientes\n- Configurações consistentes\n\nControle de Segurança\n- Limitação de acesso apenas ao necessário\n- Controle granular de permissões\n- Auditoria de ferramentas utilizadas`
     },
     {
       icon: '🛠️',
       title: 'Customização',
-      description: 'Personalize o Amazon Q com seu código organizacional',
-      subtitle: 'Adapte o Amazon Q ao contexto da sua organização',
-      overview: 'A customização permite que o Amazon Q aprenda com o código e padrões da sua organização, oferecendo sugestões mais relevantes.',
+      description: 'Personalize o Amazon Q com o código da sua organização para sugestões específicas',
+      subtitle: '⚙️ Customização do Amazon Q',
+      overview: `🎯 O que é Customização?\n\nA customização permite que o Amazon Q aprenda com o código da sua organização para fornecer sugestões de código que seguem os padrões, convenções e estilo específicos da sua empresa.\n\n🚀 Como Funciona\n\n1. Conecte seus Repositórios\n- GitHub, GitLab, Bitbucket via AWS CodeConnections\n- Amazon S3 para outros repositórios\n- Selecione repositórios específicos ou todos\n\n2. Análise do Código\n- Amazon Q analisa padrões do seu código\n- Identifica convenções de nomenclatura\n- Aprende estruturas arquiteturais\n- Reconhece bibliotecas e frameworks usados\n\n3. Sugestões Personalizadas\n- Código gerado segue padrões da organização\n- Sugestões específicas para suas bibliotecas\n- Mantém consistência com base de código existente\n\n📋 Pré-requisitos\n\nLicenciamento\n- Amazon Q Developer Pro (obrigatório)\n- Perfil Amazon Q Developer instalado\n- Usuários subscritos via IAM Identity Center\n\nRequisitos de Código\n- Mínimo: 10 arquivos por linguagem de programação\n- Tamanho: Entre 2MB e 20GB de código fonte\n- Máximo: 100 repositórios (seleção individual)\n- Linguagens: Java, Python, JavaScript, TypeScript, etc.\n\n⚙️ Criando uma Customização\n\nPasso 1: Acesso ao Console\n- Faça login no AWS Management Console\n- Acesse o console do Amazon Q Developer\n- No painel de navegação, escolha Customizations\n- Clique em Create customization\n\nPasso 2: Configuração Básica\n- Nome da customização (obrigatório)\n- Descrição (opcional, mas recomendado)\n- Tags (opcional)\n\nPasso 3: Conectar Fonte de Dados\nOpção A: AWS CodeConnections\n1. Selecione "AWS CodeStar CodeConnections"\n2. Escolha conexão existente ou crie nova\n3. Selecione repositórios:\n   - "Use all repositories" (todos)\n   - "Select specific repositories" (até 100)\nOpção B: Amazon S3\n1. Selecione "Amazon S3"\n2. Clique em "Browse Amazon S3"\n3. Navegue até sua base de código\n4. Cole a URI do S3 (deve ser pasta, não raiz do bucket)\n\nPasso 4: Finalizar\n- Revise configurações\n- Clique em Create customization\n- Aguarde processamento (pode levar algumas horas)\n\n🔒 Privacidade e Segurança\n\nProteção de Dados\n- AWS não armazena seu código fora do contexto da customização\n- Não compartilha sugestões com outros clientes\n- Não referencia code reviews de outros clientes\n- Uso exclusivo para sua organização\n\nControle de Acesso\n- Apenas usuários autorizados veem a customização\n- Visível na IDE através do plugin AWS\n- Controle via IAM Identity Center\n\n🛠️ Troubleshooting\n\nErro: "Total size exceeds maximum"\nSolução: Remova alguns repositórios e tente novamente\n\nErro: "Insufficient data"\nCausa: Menos de 10 arquivos por linguagem ou menos de 2MB total\nSolução: Adicione mais arquivos de código nas linguagens desejadas\n\nErro: "Issue retrieving repositories"\nCausa: Problemas de acesso aos repositórios via CodeConnections\nSolução: Verifique permissões e tente novamente com repositórios válidos\n\n💡 Melhores Práticas\n\nSeleção de Repositórios\n- Inclua repositórios representativos dos padrões da organização\n- Priorize código bem estruturado e documentado\n- Evite repositórios experimentais ou legados\n\nManutenção\n- Atualize customizações periodicamente\n- Remova repositórios obsoletos\n- Adicione novos padrões conforme evoluem\n\nNomenclatura\n- Use nomes descritivos para customizações\n- Inclua descrições informativas\n- Considere versionamento para diferentes contextos\n\n📊 Benefícios\n\nPara Desenvolvedores\n- Sugestões consistentes com padrões da empresa\n- Redução de tempo em code reviews\n- Aprendizado automático de convenções\n\nPara Organização\n- Padronização automática de código\n- Redução de débito técnico\n- Onboarding mais rápido de novos desenvolvedores\n\nPara Qualidade\n- Consistência arquitetural\n- Redução de bugs por padrões incorretos\n- Melhoria contínua da base de código`,
       howToUse: [
-        'Conectar repositórios da organização',
-        'Configurar índices de código',
-        'Definir preferências e padrões',
-        'Treinar com exemplos específicos'
+        'Conecte seus repositórios via AWS CodeConnections ou Amazon S3',
+        'Amazon Q analisa padrões, convenções e arquitetura do seu código',
+        'Sugestões personalizadas para sua organização',
+        'Pré-requisitos: licenciamento, perfil instalado, código suficiente',
+        'Crie customizações pelo Console AWS',
+        'Privacidade e controle de acesso garantidos',
+        'Siga melhores práticas de seleção e manutenção de repositórios'
       ]
     },
     {
       icon: '🧪',
       title: 'Testes Unitários',
-      description: 'Geração automática de testes para acelerar desenvolvimento',
-      subtitle: 'Gere testes automaticamente com Amazon Q',
-      overview: 'A geração automática de testes permite criar testes unitários completos rapidamente, aumentando a cobertura e qualidade do código.',
+      description: 'Geração automática de testes unitários para acelerar desenvolvimento',
+      subtitle: '🧪 Testes Unitários com Amazon Q',
+      overview: `🎯 Overview\n\nO Amazon Q Developer oferece geração automática de testes unitários que acelera o desenvolvimento mantendo a qualidade do código.\n\nO agent automatiza:\n- Identificação de casos de teste apropriados\n- Criação de mocks e stubs para testes isolados\n- Geração de código de teste baseado na estrutura do projeto\n\n🚀 Como Usar\n\nMétodo 1: Chat Natural\nGenerate unit tests for my application\n\nMétodo 2: Menu Contextual\n- Selecione o código que deseja testar\n- Clique com botão direito\n- Escolha "Generate tests"\n\nMétodo 3: Comando Específico\nGenerate unit tests for the UserService class\n\n📋 Processo Automático\n\n1. Análise\n- Amazon Q examina o arquivo ativo\n- Analisa estrutura do projeto\n- Identifica dependências e frameworks\n\n2. Detecção\n- Verifica se já existe arquivo de teste correspondente\n- Analisa testes existentes para evitar duplicação\n- Identifica lacunas na cobertura\n\n3. Geração\n- Cria novos testes ou adiciona aos existentes\n- Gera mocks necessários automaticamente\n- Segue convenções do framework detectado\n\n4. Review\n- Apresenta diff para aprovação\n- Permite aceitar ou rejeitar mudanças\n- Oferece opções de refinamento\n\n💻 Linguagens e Frameworks Suportados\n\nJava\n- JUnit 4/5\n- TestNG\n- Mockito para mocks\n- Spring Boot Test para testes de integração\n\nPython\n- pytest\n- unittest\n- mock/unittest.mock para mocks\n- Django Test para projetos Django`,
       howToUse: [
-        'Selecionar função/classe para testar',
-        'Usar comando de gerar testes',
-        'Revisar testes gerados',
-        'Ajustar casos de teste conforme necessário'
+        'Método 1: Chat Natural',
+        'Método 2: Menu Contextual',
+        'Método 3: Comando Específico',
+        'Processo Automático: Análise, Detecção, Geração, Review',
+        'Linguagens: Java, Python'
       ]
     }
   ];
@@ -1514,7 +1536,7 @@ Checklist de Qualidade
                         <div className="modal-section">
                           <h4>🚀 Como Usar</h4>
                           <ol className="feature-steps">
-                            {featuresDetails[selectedFeature].howToUse.map((step, i) => (
+                            {featuresDetails[selectedFeature]?.howToUse?.map((step, i) => (
                               <li key={i}>{step}</li>
                             ))}
                           </ol>
