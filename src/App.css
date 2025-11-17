@@ -1,3 +1,36 @@
+.jira-popup-bg h2, .jira-popup-bg h4 {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.jira-popup-bg h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.jira-popup-bg p, .jira-popup-bg ul, .jira-popup-bg ol {
+  margin-bottom: 18px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.jira-popup-bg ul, .jira-popup-bg ol {
+  padding-left: 22px;
+}
+
+.jira-popup-bg li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+/* Fundo cinza para pop-up do Jira na aba MCPs */
+.jira-popup-bg {
+  background: #f9fafb;
+  border-radius: 8px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 16px 12px;
+}
 /* Container para aba Escrever User Stories com IA */
 .user-stories-bg {
   background: #ffffff;

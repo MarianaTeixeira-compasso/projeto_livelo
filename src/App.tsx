@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { FileText, Layers, Zap, CheckCircle, MessageCircle, BarChart3, Settings, Target, Palette, Activity, BookOpen } from 'lucide-react';
+import Footer from './Footer';
 
 type Tab = 'inicio' | 'playbooks' | 'guia' | 'prompts' | 'mcps' | 'rules';
 
@@ -1011,6 +1012,22 @@ Checklist de Qualidade
   const renderTabContent = () => {
     switch (activeTab) {
       case 'inicio':
+            // ...existing code...
+            {/* Seção: NAVEGUE NO TEMA (agora no final) */}
+            <section className="highlight-section" style={{margin: '64px 0', background: '#fff', borderRadius: '32px', padding: '64px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: '0 2px 24px rgba(0,0,0,0.04)'}}>
+              <h2 style={{fontSize: '3rem', fontWeight: 900, color: '#222', marginBottom: '24px', textAlign: 'center', letterSpacing: '-2px'}}>NAVEGUE NO TEMA</h2>
+              <p style={{fontSize: '1.5rem', color: '#555', marginBottom: '48px', textAlign: 'center', lineHeight: '1.4', maxWidth: '900px'}}>
+                Para facilitar sua jornada navegue pelos seguintes links:
+              </p>
+              <div style={{display: 'flex', flexWrap: 'wrap', gap: '32px', justifyContent: 'center', width: '100%', marginBottom: '32px'}}>
+                <button style={{background: '#d7267b', color: '#fff', border: 'none', borderRadius: '40px', padding: '24px 48px', fontWeight: 700, fontSize: '1.4rem', cursor: 'pointer'}}>Playbooks para POs</button>
+                <button style={{background: '#d7267b', color: '#fff', border: 'none', borderRadius: '40px', padding: '24px 48px', fontWeight: 700, fontSize: '1.4rem', cursor: 'pointer'}}>Guia do Desenvolvedor</button>
+                <button style={{background: '#d7267b', color: '#fff', border: 'none', borderRadius: '40px', padding: '24px 48px', fontWeight: 700, fontSize: '1.4rem', cursor: 'pointer'}}>Prompts Técnicos</button>
+              </div>
+              <div style={{display: 'flex', justifyContent: 'center', width: '100%'}}>
+                <button style={{background: '#d7267b', color: '#fff', border: 'none', borderRadius: '40px', padding: '24px 48px', fontWeight: 700, fontSize: '1.4rem', cursor: 'pointer'}}>Integrações (MCPs)</button>
+              </div>
+            </section>
             {/* Nova seção com imagem seoplus.webp - movida para garantir exibição */}
             <section className="highlight-section" style={{marginBottom: '48px', background: '#f8f9fa', borderRadius: '32px', padding: '56px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: '0 2px 24px rgba(0,0,0,0.04)'}}>
               <div style={{display: 'flex', flexWrap: 'wrap', gap: '48px', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
@@ -1107,8 +1124,142 @@ Checklist de Qualidade
                 </div>
               </div>
             </section>
-          </div>
-        );
+
+            {/* Nova seção com imagem seoplus.webp */}
+            <section className="highlight-section" style={{marginBottom: '48px', background: '#fff', borderRadius: '32px', padding: '56px 32px', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 24px rgba(0,0,0,0.04)'}}>
+              <div style={{flex: '1 1 480px', minWidth: '320px', maxWidth: '600px', textAlign: 'left', display: 'flex', alignItems: 'center', height: '100%'}}>
+                <p style={{fontSize: '1.25rem', color: '#666', marginBottom: '24px', lineHeight: '1.5', fontWeight: 400}}>
+                  O SEO+ é uma solução interna para otimizar a criação e publicação de páginas de viagens, com o objetivo de publicar 700 páginas em 2025. Resultados expressivos de semana para minutos.
+                </p>
+              </div>
+              <div style={{flex: '1 1 640px', minWidth: '320px', maxWidth: '900px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <img src="/seoplus.webp" alt="SEO+" style={{width: '100%', maxWidth: '800px', borderRadius: '24px', boxShadow: '0 4px 32px rgba(0,0,0,0.10)'}} />
+              </div>
+            </section>
+
+            {/* Seção final: GitHub Copilot + LiteLLM */}
+                        {/* Seção final: GitHub Copilot + LiteLLM */}
+                        {/* ...imagem litellm.webp... */}
+                        <section className="highlight-section" style={{marginBottom: '48px', background: '#fff', borderRadius: '32px', padding: '56px 32px', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 24px rgba(0,0,0,0.04)'}}>
+                          <div style={{flex: '1 1 480px', minWidth: '320px', maxWidth: '600px', textAlign: 'left', display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%'}}>
+                            <p style={{fontSize: '1.35rem', color: '#666', marginBottom: '32px', lineHeight: '1.5', fontWeight: 400}}>
+                              Sua equipe de desenvolvimento está sobrecarregada e com dificuldade de escalar? O GitHub Copilot é a solução que você precisa!
+                            </p>
+                            <p style={{fontSize: '1.35rem', color: '#666', marginBottom: '32px', lineHeight: '1.5', fontWeight: 400}}>
+                              Ele não é apenas uma ferramenta de autocompletar; é seu parceiro de programação com IA.<br /><br />
+                              O GitHub Copilot acelera a escrita de código, sugere funções inteiras e até mesmo ajuda a encontrar erros, liberando seus desenvolvedores para focar em desafios mais complexos e na inovação.
+                            </p>
+                            <p style={{fontSize: '1.35rem', color: '#666', marginBottom: '0', lineHeight: '1.5', fontWeight: 400}}>
+                              LiteLLM, o gateway universal para todos os Modelos de Linguagem Grandes (LLMs), traz eficiência na implementação, flexibilidade para testar e alternar entre modelos, e a capacidade de escalar suas aplicações de IA sem se prender a uma única plataforma ou se afogar em integrações.
+                            </p>
+                          </div>
+                          <div style={{flex: '1 1 640px', minWidth: '320px', maxWidth: '900px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                            <img src="/litellm.webp" alt="LiteLLM Dashboard" style={{width: '100%', maxWidth: '800px', borderRadius: '24px', boxShadow: '0 4px 32px rgba(0,0,0,0.10)'}} />
+                          </div>
+                        </section>
+
+                        {/* Seção de vídeos Lawra e DataLiv */}
+                        <section className="highlight-section" style={{marginBottom: '48px', background: '#fff', borderRadius: '32px', padding: '56px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: '0 2px 24px rgba(0,0,0,0.04)'}}>
+                                                  // ...existing code...
+                          <h2 style={{fontSize: '3rem', fontWeight: 900, color: '#222', marginBottom: '32px', textAlign: 'center'}}>INTERAJA COM AGENTES DE IA!</h2>
+                          <p style={{fontSize: '2rem', color: '#666', marginBottom: '40px', textAlign: 'center', lineHeight: '1.4'}}>
+                            Prepare-se para redefinir o que é possível. Agentes de IA via Plataforma de IA são a chave<br />
+                            para otimizar processos, gerar insights poderosos e impulsionar o seu sucesso.
+                          </p>
+                          <div style={{display: 'flex', justifyContent: 'center', gap: '64px', marginTop: '24px', marginBottom: '24px', flexWrap: 'wrap'}}>
+                            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '500px', width: '100%'}}>
+                              <video controls style={{width: '100%', borderRadius: '20px', boxShadow: '0 8px 32px rgba(0,0,0,0.18)'}}>
+                                <source src="/Lawra.mp4" type="video/mp4" />
+                                Seu navegador não suporta o elemento de vídeo.
+                              </video>
+                              <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '2rem', marginTop: '16px'}}>Lawra</div>
+                            </div>
+                            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '500px', width: '100%'}}>
+                              <video controls style={{width: '100%', borderRadius: '20px', boxShadow: '0 8px 32px rgba(0,0,0,0.18)'}}>
+                                <source src="/DataLiv.mp4" type="video/mp4" />
+                                Seu navegador não suporta o elemento de vídeo.
+                              </video>
+                              <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '2rem', marginTop: '16px'}}>DataLiv</div>
+                            </div>
+                          </div>
+                        </section>
+          {/* Seção: SUA JORNADA DE IA COMEÇA AGORA */}
+          <section className="highlight-section" style={{margin: '48px 0', background: '#f7f8fa', borderRadius: '32px', padding: '64px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: '0 2px 24px rgba(0,0,0,0.04)'}}>
+            <h2 style={{fontSize: '3.2rem', fontWeight: 900, color: '#222', marginBottom: '32px', textAlign: 'center', letterSpacing: '-2px'}}>SUA JORNADA DE<br />IA COMEÇA AGORA</h2>
+            <p style={{fontSize: '2rem', color: '#555', marginBottom: '0', textAlign: 'center', lineHeight: '1.4', maxWidth: '900px'}}>
+              Desvende o futuro da IA na Livelo! Sua jornada para inovar e transformar ideias em realidade começa agora. Aprenda, crie, use e lidere com inteligência artificial.
+            </p>
+          </section>
+
+          {/* Seção: PLAYBOOKS PARA TIMES DE PRODUTO */}
+          <section className="highlight-section" style={{margin: '48px 0', background: '#f7f8fa', borderRadius: '32px', padding: '64px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: '0 2px 24px rgba(0,0,0,0.04)'}}>
+            <h2 style={{fontSize: '3.2rem', fontWeight: 900, color: '#222', marginBottom: '18px', textAlign: 'center', letterSpacing: '-2px'}}>PLAYBOOKS PARA TIMES DE PRODUTO</h2>
+            <p style={{fontSize: '1.6rem', color: '#555', marginBottom: '48px', textAlign: 'center', lineHeight: '1.4', maxWidth: '900px'}}>
+              Guias práticos para POs e BAs usarem IA no dia a dia
+            </p>
+            <div style={{display: 'flex', gap: '32px', flexWrap: 'wrap', justifyContent: 'flex-start', width: '100%'}}>
+              {/* Card 1: User Stories com IA */}
+              <div style={{background: '#fff', borderRadius: '24px', boxShadow: '0 2px 16px rgba(0,0,0,0.06)', padding: '40px 32px', minWidth: '320px', maxWidth: '370px', flex: '1 1 320px', display: 'flex', flexDirection: 'column', alignItems: 'center', border: '3px solid #eee'}}>
+                <div style={{background: '#f72585', borderRadius: '20px', width: '80px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+                  <FileText size={48} strokeWidth={2} color="#fff" />
+                </div>
+                <h3 style={{fontSize: '1.5rem', fontWeight: 700, color: '#222', marginBottom: '12px', textAlign: 'center'}}>User Stories com IA</h3>
+                <p style={{fontSize: '1.1rem', color: '#666', marginBottom: '24px', textAlign: 'center'}}>Crie stories bem estruturadas 70% mais rápido</p>
+                <span style={{background: '#f72585', color: '#a0135a', borderRadius: '20px', padding: '8px 24px', fontWeight: 700, fontSize: '1rem'}}>Product Owner</span>
+              </div>
+              {/* Card 2: Refinamento de Backlog */}
+              <div style={{background: '#fff', borderRadius: '24px', boxShadow: '0 2px 16px rgba(0,0,0,0.06)', padding: '40px 32px', minWidth: '320px', maxWidth: '370px', flex: '1 1 320px', display: 'flex', flexDirection: 'column', alignItems: 'center', border: '3px solid #eee'}}>
+                <div style={{background: '#f72585', borderRadius: '20px', width: '80px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+                  <Layers size={48} strokeWidth={2} color="#fff" />
+                </div>
+                <h3 style={{fontSize: '1.5rem', fontWeight: 700, color: '#222', marginBottom: '12px', textAlign: 'center'}}>Refinamento de Backlog</h3>
+                <p style={{fontSize: '1.1rem', color: '#666', marginBottom: '24px', textAlign: 'center'}}>Analise e priorize com eficiência</p>
+                <span style={{background: '#f72585', color: '#a0135a', borderRadius: '20px', padding: '8px 24px', fontWeight: 700, fontSize: '1rem'}}>Product Owner</span>
+              </div>
+              {/* Card 3: Análise de Feedback */}
+              <div style={{background: '#fff', borderRadius: '24px', boxShadow: '0 2px 16px rgba(0,0,0,0.06)', padding: '40px 32px', minWidth: '320px', maxWidth: '370px', flex: '1 1 320px', display: 'flex', flexDirection: 'column', alignItems: 'center', border: '3px solid #eee'}}>
+                <div style={{background: '#f72585', borderRadius: '20px', width: '80px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+                  <MessageCircle size={48} strokeWidth={2} color="#fff" />
+                </div>
+                <h3 style={{fontSize: '1.5rem', fontWeight: 700, color: '#222', marginBottom: '12px', textAlign: 'center'}}>Análise de Feedback</h3>
+                <p style={{fontSize: '1.1rem', color: '#666', marginBottom: '24px', textAlign: 'center'}}>Extraia insights automaticamente</p>
+                <span style={{background: '#f72585', color: '#a0135a', borderRadius: '20px', padding: '8px 24px', fontWeight: 700, fontSize: '1rem'}}>Product Owner</span>
+              </div>
+              {/* Card 4: Análise de Requisitos */}
+              <div style={{background: '#fff', borderRadius: '24px', boxShadow: '0 2px 16px rgba(0,0,0,0.06)', padding: '40px 32px', minWidth: '320px', maxWidth: '370px', flex: '1 1 320px', display: 'flex', flexDirection: 'column', alignItems: 'center', border: '3px solid #eee'}}>
+                <div style={{background: '#f72585', borderRadius: '20px', width: '80px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+                  <CheckCircle size={48} strokeWidth={2} color="#fff" />
+                </div>
+                <h3 style={{fontSize: '1.5rem', fontWeight: 700, color: '#222', marginBottom: '12px', textAlign: 'center'}}>Análise de Requisitos</h3>
+                <p style={{fontSize: '1.1rem', color: '#666', marginBottom: '24px', textAlign: 'center'}}>Documente requisitos 65% mais rápido</p>
+                <span style={{background: '#f72585', color: '#a0135a', borderRadius: '20px', padding: '8px 24px', fontWeight: 700, fontSize: '1rem'}}>Business Analyst</span>
+              </div>
+            </div>
+            {/* Botão: Ver Todos os Playbooks */}
+            <div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: '48px', position: 'relative'}}>
+              <button style={{background: '#f72585', color: '#fff', border: 'none', borderRadius: '40px', padding: '24px 64px', fontWeight: 700, fontSize: '2rem', boxShadow: '0 4px 32px rgba(247,37,133,0.18)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '12px'}}>
+                Ver Todos os Playbooks &rarr;
+              </button>
+            </div>
+
+            {/* Seção: NAVEGUE NO TEMA (agora abaixo do botão) */}
+            <section className="highlight-section" style={{margin: '64px 0', background: '#fff', borderRadius: '32px', padding: '64px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: '0 2px 24px rgba(0,0,0,0.04)'}}>
+              <h2 style={{fontSize: '3rem', fontWeight: 900, color: '#222', marginBottom: '24px', textAlign: 'center', letterSpacing: '-2px'}}>NAVEGUE NO TEMA</h2>
+              <p style={{fontSize: '1.5rem', color: '#555', marginBottom: '48px', textAlign: 'center', lineHeight: '1.4', maxWidth: '900px'}}>
+                Para facilitar sua jornada navegue pelos seguintes links:
+              </p>
+              <div style={{display: 'flex', flexWrap: 'wrap', gap: '32px', justifyContent: 'center', width: '100%', marginBottom: '32px'}}>
+                <button style={{background: '#d7267b', color: '#fff', border: 'none', borderRadius: '40px', padding: '24px 48px', fontWeight: 700, fontSize: '1.4rem', cursor: 'pointer'}}>Playbooks para POs</button>
+                <button style={{background: '#d7267b', color: '#fff', border: 'none', borderRadius: '40px', padding: '24px 48px', fontWeight: 700, fontSize: '1.4rem', cursor: 'pointer'}}>Guia do Desenvolvedor</button>
+                <button style={{background: '#d7267b', color: '#fff', border: 'none', borderRadius: '40px', padding: '24px 48px', fontWeight: 700, fontSize: '1.4rem', cursor: 'pointer'}}>Prompts Técnicos</button>
+              </div>
+              <div style={{display: 'flex', justifyContent: 'center', width: '100%'}}>
+                <button style={{background: '#d7267b', color: '#fff', border: 'none', borderRadius: '40px', padding: '24px 48px', fontWeight: 700, fontSize: '1.4rem', cursor: 'pointer'}}>Integrações (MCPs)</button>
+              </div>
+            </section>
+          </section>
+        </div>
+      );
       
       case 'playbooks':
         return (
@@ -2305,29 +2456,28 @@ Utilize o arquivo @Dashboard-Layout-Patterns.md para padrões e boas práticas q
                     <button className="modal-close" onClick={() => setSelectedMcp(null)}>×</button>
                   </div>
                   <div className="modal-body">
-                    <p className="feature-subtitle">{mcps[selectedMcp].details.subtitle}</p>
-                    
-                    <div className="modal-section">
-                      <h4>🎯 Overview</h4>
-                      <p>{mcps[selectedMcp].details.overview}</p>
-                    </div>
-
-                    <div className="modal-section">
-                      <h4>⚡ Features</h4>
-                      <ul>
-                        {mcps[selectedMcp].details.features.map((feature, i) => (
-                          <li key={i}>{feature}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="modal-section">
-                      <h4>🚀 Como Usar</h4>
-                      <ol className="feature-steps">
-                        {mcps[selectedMcp].details.howToUse.map((step, i) => (
-                          <li key={i}>{step}</li>
-                        ))}
-                      </ol>
+                    <div className={mcps[selectedMcp].title === 'Jira' ? 'jira-popup-bg' : ''}>
+                      <p className="feature-subtitle">{mcps[selectedMcp].details.subtitle}</p>
+                      <div className="modal-section">
+                        <h4>🎯 Overview</h4>
+                        <p>{mcps[selectedMcp].details.overview}</p>
+                      </div>
+                      <div className="modal-section">
+                        <h4>⚡ Features</h4>
+                        <ul>
+                          {mcps[selectedMcp].details.features.map((feature, i) => (
+                            <li key={i}>{feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="modal-section">
+                        <h4>🚀 Como Usar</h4>
+                        <ol className="feature-steps">
+                          {mcps[selectedMcp].details.howToUse.map((step, i) => (
+                            <li key={i}>{step}</li>
+                          ))}
+                        </ol>
+                      </div>
                     </div>
 
                     <div className="modal-section">
@@ -2641,11 +2791,11 @@ ${rules[selectedRule].title === 'Amazon Q Learning Files' ?
       </div>
       
       <button 
-        className="floating-btn" 
         aria-label="IA Assistant"
         onClick={() => setChatOpen(!chatOpen)}
+        style={{position: 'fixed', right: '48px', bottom: '48px', background: '#f72585', border: 'none', outline: 'none', borderRadius: '50%', width: '64px', height: '64px', boxShadow: '0 4px 32px rgba(247,37,133,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', zIndex: 1000}}
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="96" height="96" viewBox="0 0 24 24" fill="none" style={{display: 'block', margin: '0 auto'}} xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" stroke="white" strokeWidth="1.5" strokeLinejoin="round"/>
           <circle cx="17" cy="6" r="1.5" stroke="white" strokeWidth="1.5"/>
         </svg>
