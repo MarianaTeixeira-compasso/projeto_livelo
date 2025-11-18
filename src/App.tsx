@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import './App.scss';
 import Navbar from './components/Navbar/Navbar';
 import ChatModal from './components/ChatModal/ChatModal';
+import Container from './components/Container/Container';
 import Home from './pages/home/Home';
 import Playbooks from './pages/playbooks/Playbooks';
 import GuiaDesenvolvedor from './pages/guia-desenvolvedor/GuiaDesenvolvedor';
@@ -41,14 +42,16 @@ function App() {
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         
         <div className="content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/playbooks" element={<Playbooks />} />
-            <Route path="/guia-desenvolvedor" element={<GuiaDesenvolvedor />} />
-            <Route path="/prompts-tecnicos" element={<PromptsTecnicos />} />
-            <Route path="/mcps" element={<MCPs />} />
-            <Route path="/rules" element={<Rules />} />
-          </Routes>
+          <Container>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/playbooks" element={<Playbooks />} />
+              <Route path="/guia-desenvolvedor" element={<GuiaDesenvolvedor />} />
+              <Route path="/prompts-tecnicos" element={<PromptsTecnicos />} />
+              <Route path="/mcps" element={<MCPs />} />
+              <Route path="/rules" element={<Rules />} />
+            </Routes>
+          </Container>
         </div>
 
         <button 
