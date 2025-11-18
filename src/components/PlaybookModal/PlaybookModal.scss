@@ -1,0 +1,450 @@
+// Modal styles are already defined in the main App.scss
+// This file can be used for PlaybookModal-specific styles if needed
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+
+  @keyframes modalSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.modal-header {
+  padding: 24px 32px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 10;
+
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #6b7280;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s;
+    padding: 0;
+    line-height: 1;
+
+    &:hover {
+      background: #f3f4f6;
+      color: #111827;
+    }
+  }
+}
+
+.modal-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 16px 32px 0;
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+  position: sticky;
+  top: 73px;
+  z-index: 9;
+
+  .modal-tab {
+    padding: 10px 16px;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #6b7280;
+    transition: all 0.2s;
+    user-select: none;
+
+    &:hover {
+      color: #d11778;
+    }
+
+    &.active {
+      color: #d11778;
+      background: transparent;
+      border-bottom: 3px solid #d11778;
+    }
+  }
+}
+
+.modal-body {
+  padding: 32px;
+
+  &.modal-body-compact {
+    padding-top: 12px;
+    padding-bottom: 20px;
+  }
+
+  // All modal content is left-aligned
+  &,
+  p,
+  ul,
+  li,
+  pre,
+  h3,
+  h4 {
+    text-align: left;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4b5563;
+    margin: 0 0 32px 0;
+  }
+
+  .modal-section {
+    margin-bottom: 48px;
+
+    h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #4b5563;
+      margin: 24px 0 16px 0;
+    }
+
+    p {
+      color: #4b5563;
+      line-height: 1.6;
+      margin: 0;
+      text-align: justify;
+    }
+
+    ul {
+      margin: 8px 0;
+      padding-left: 24px;
+      color: #4b5563;
+
+      li {
+        margin: 8px 0;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .code-block {
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.92rem;
+    color: #444;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    line-height: 1.7;
+    margin: 8px 0;
+  }
+
+  .example-box {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 8px 0;
+
+    strong {
+      color: #444;
+      display: block;
+      margin-bottom: 12px;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .code-block {
+      font-size: 0.88rem;
+    }
+  }
+
+  .time-section {
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: left;
+
+    .efficiency-note {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #4b5563;
+      margin: 0;
+    }
+  }
+
+  .copy-button {
+    background: #d11778;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-block;
+    margin: 32px 0 0 0;
+
+    &:hover {
+      background: #b01464;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(209, 23, 120, 0.3);
+    }
+  }
+}
+
+// Container for user stories background
+.user-stories-bg {
+  background: #ffffff;
+  border-radius: 16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding: 16px 0.5cm;
+
+  .modal-section {
+    margin-bottom: 14px;
+  }
+
+  .time-section {
+    margin-bottom: 8px;
+  }
+
+  + .copy-button {
+    margin-top: 12px;
+  }
+}
+
+// Prompt base block styles
+.prompt-base-block {
+  background: #f3f4f6;
+  border-radius: 14px;
+  padding: 20px 18px;
+  margin: 18px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+  h4,
+  .prompt-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 12px;
+  }
+
+  p,
+  ul,
+  li {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  ul {
+    margin: 12px 0 0 0;
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 6px;
+    }
+  }
+
+  .modal-section {
+    margin-bottom: 28px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .code-block {
+    line-height: 1.75;
+    margin: 10px 0;
+  }
+}
+
+// Expanded spacing for specific playbooks
+.user-stories-expanded {
+  .modal-section {
+    margin-bottom: 52px;
+
+    p {
+      line-height: 1.75;
+    }
+
+    ul {
+      margin: 12px 0;
+
+      li {
+        margin: 10px 0;
+        line-height: 1.7;
+      }
+    }
+  }
+
+  .code-block {
+    line-height: 1.75;
+    margin: 10px 0;
+  }
+
+  .time-section {
+    margin-bottom: 8px;
+  }
+}
+
+// Empty box for installation tab
+.install-empty-box {
+  min-height: 3px;
+  margin: 0;
+}
+
+// Dark theme
+.main-bg.dark {
+  .modal-content {
+    background: #1a1a1a;
+  }
+
+  .modal-header {
+    background: #1a1a1a;
+    border-bottom-color: #2a2a2a;
+
+    h2 {
+      color: #fff;
+    }
+
+    .modal-close {
+      color: #9ca3af;
+
+      &:hover {
+        background: #2a2a2a;
+        color: #fff;
+      }
+    }
+  }
+
+  .modal-tabs {
+    background: #1a1a1a;
+    border-bottom-color: #2a2a2a;
+
+    .modal-tab {
+      color: #9ca3af;
+
+      &:hover {
+        color: #ff0080;
+      }
+    }
+  }
+
+  .modal-body {
+    h3 {
+      color: #6b7280;
+    }
+
+    .modal-section {
+      h4 {
+        color: #6b7280;
+      }
+
+      p,
+      ul {
+        color: #9ca3af;
+      }
+    }
+
+    .code-block {
+      background: #111315;
+      border-color: #2a2a2a;
+      color: #e5e7eb;
+    }
+
+    .example-box {
+      background: transparent;
+
+      strong {
+        color: #6b7280;
+      }
+    }
+
+    .time-section {
+      background: transparent;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+  
+  .modal-header,
+  .modal-tabs,
+  .modal-body {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .modal-tabs {
+    gap: 0;
+    flex-wrap: wrap;
+
+    .modal-tab {
+      flex: 1 1 100%;
+      text-align: center;
+      border-bottom: 1px solid #e5e7eb;
+      border-radius: 0;
+      padding: 12px 10px;
+
+      &.active {
+        border-bottom-width: 3px;
+      }
+    }
+  }
+
+  .main-bg.dark .modal-tab {
+    border-bottom-color: #2a2a2a;
+  }
+}

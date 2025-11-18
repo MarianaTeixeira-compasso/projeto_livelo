@@ -1,0 +1,86 @@
+.rule-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: left;
+
+  &:hover {
+    border-color: #ff0080;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 0, 128, 0.2);
+  }
+
+  .rule-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #ff0080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .rule-title {
+    margin: 0 0 12px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .rule-tags {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .rule-tag {
+      background: #ff0080;
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    span:not(.rule-tag) {
+      color: #111827;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+
+  .rule-desc {
+    color: #6b7280;
+    margin: 0;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+// Dark theme
+.main-bg.dark {
+  .rule-card {
+    background: #1a1a1a;
+    border-color: #2a2a2a;
+
+    .rule-title {
+      color: #fff;
+    }
+
+    .rule-tags span:not(.rule-tag) {
+      color: #9ca3af;
+    }
+
+    .rule-desc {
+      color: #9ca3af;
+    }
+  }
+}

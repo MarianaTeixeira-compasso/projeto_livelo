@@ -1,0 +1,154 @@
+.playbook-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 26px 26px 44px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.2s;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  height: auto;
+  align-items: flex-start;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #ff0080;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  &:nth-child(1) {
+    border-color: #ff0080;
+  }
+
+  .playbook-icon {
+    background: #ff3ba0;
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    align-self: flex-start;
+    flex-shrink: 0;
+  }
+
+  .playbook-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 14px 0;
+    color: #111827;
+    text-align: left;
+    line-height: 1.3;
+  }
+
+  .playbook-meta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+
+    .persona-badge {
+      background: #ff3ba0;
+      color: #8b0048;
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .speed-badge {
+      color: #000000;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+  }
+
+  .playbook-desc {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: auto;
+    line-height: 1.5;
+    flex: 1;
+    text-align: left !important;
+  }
+
+  .playbook-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: -8px;
+    padding-top: 12px;
+    margin-bottom: 8px;
+    flex-shrink: 0;
+
+    .playbook-tag {
+      background: #f3f4f6;
+      color: #6b7280;
+      border-radius: 18px;
+      padding: 5px 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      border: none;
+
+      &.playbook-tag-highlight {
+        background: #ff3ba0;
+        color: #8b0048;
+        border-color: #ff3ba0;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// Dark theme
+.main-bg.dark {
+  .playbook-card {
+    background: #1a1a1a;
+    border-color: #2a2a2a;
+
+    &:nth-child(1) {
+      border-color: #ff0080;
+    }
+
+    .playbook-title {
+      color: #fff;
+    }
+
+    .speed-badge {
+      color: #9ca3af;
+    }
+
+    .playbook-desc {
+      color: #9ca3af;
+    }
+
+    .playbook-tags {
+      .playbook-tag {
+        background: #2a2a2a;
+        color: #9ca3af;
+        border-color: #3a3a3a;
+
+        &.playbook-tag-highlight {
+          background: #ff0080;
+          color: #fff;
+          border-color: #ff0080;
+        }
+      }
+    }
+  }
+}

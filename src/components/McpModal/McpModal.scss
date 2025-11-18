@@ -1,0 +1,103 @@
+.jira-popup-bg {
+  background: #f9fafb;
+  border-radius: 8px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 24px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+
+  h2, h3, h4 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-weight: 700;
+    color: #222;
+    display: flex;
+    align-items: center;
+  }
+
+  h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #374151;
+  }
+
+  p, ul, ol {
+    margin-bottom: 18px;
+    font-size: 1rem;
+    color: #444;
+  }
+
+  ul, ol {
+    padding-left: 22px;
+  }
+
+  li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+}
+
+.feature-subtitle {
+  color: #6b7280;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+  font-weight: 500;
+}
+
+.feature-steps {
+  margin: 8px 0;
+  padding-left: 24px;
+  color: #4b5563;
+  counter-reset: step-counter;
+  list-style: none;
+
+  li {
+    margin: 16px 0;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 12px;
+
+    &::before {
+      counter-increment: step-counter;
+      content: counter(step-counter);
+      position: absolute;
+      left: -32px;
+      top: 0;
+      width: 28px;
+      height: 28px;
+      background: #ff0080;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+// Dark theme
+.main-bg.dark {
+  .jira-popup-bg {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+
+    h2, h3, h4 {
+      color: #fff;
+    }
+
+    p, ul, ol {
+      color: #9ca3af;
+    }
+  }
+
+  .feature-subtitle {
+    color: #9ca3af;
+  }
+
+  .feature-steps {
+    color: #9ca3af;
+  }
+}
