@@ -222,7 +222,7 @@
         }
 
         p {
-          font-size: clamp(1rem, 3vw, 1.35rem);
+          font-size: 1.1rem;
           color: #fff;
           margin-bottom: 1.5rem;
           line-height: 1.6;
@@ -275,7 +275,7 @@
     }
 
     &.seo-section {
-      background: #fff;
+      background: #2D2D2D;
 
       .solutions-grid {
         flex-direction: row;
@@ -289,7 +289,7 @@
 
           p {
             font-size: 1.25rem;
-            color: #666;
+            color: #2D2D2D;
             margin-bottom: 24px;
             line-height: 1.5;
             font-weight: 400;
@@ -309,7 +309,8 @@
     }
 
     &.videos-section {
-      background: #FAFAFA;
+      background: transparent;
+      box-shadow: none;
 
       h2 {
         font-size: clamp(2rem, 6vw, 3rem);
@@ -317,7 +318,7 @@
       }
 
       .videos-subtitle {
-        font-size: clamp(1.125rem, 4vw, 2rem);
+        font-size: 1.2rem;
         color: #6B6B6B;
         margin-bottom: 2.5rem;
         text-align: center;
@@ -331,7 +332,6 @@
         justify-content: center;
         gap: 2rem;
         margin: 1.5rem 0;
-        flex-wrap: wrap;
 
         @media (min-width: 768px) {
           gap: 4rem;
@@ -359,14 +359,14 @@
             font-weight: 600;
             font-size: clamp(1.25rem, 4vw, 2rem);
             margin-top: 1rem;
-            color: #1A1A1A;
+            color: #FFFFFF;
           }
         }
       }
     }
 
     &.journey-section {
-      background: #F8F9FA;
+      background: #2D2D2D;
 
       h2 {
         font-size: 3.2rem;
@@ -382,139 +382,127 @@
         max-width: 56.25rem;
         font-weight: 400;
       }
-    }
 
-    &.playbooks-section {
-      background: #F8F9FA;
-
-      h2 {
-        font-size: clamp(2rem, 6vw, 3.2rem);
-        margin-bottom: 1.125rem;
-      }
-
-      .section-subtitle {
-        font-size: clamp(1.125rem, 3vw, 1.6rem);
-        color: #6B6B6B;
-        margin-bottom: 3rem;
-        text-align: center;
-        line-height: 1.4;
-        max-width: 56.25rem;
-        padding: 0 1rem;
-        font-weight: 400;
-      }
-
-      .playbooks-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
+      .play-books {
         width: 100%;
 
-        @media (min-width: 768px) {
-          gap: 2rem;
-          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        h2 {
+          font-size: 1.25rem;
+          color: var(--text-primary);
+          margin-bottom: .75rem;
         }
 
-        .playbook-card {
-          background: #fff;
-          border-radius: 1.5rem;
-          box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.06);
-          padding: 2rem 1.5rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          border: 0.1875rem solid #eee;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        .section-subtitle {
+          font-size: clamp(1.125rem, 3vw, 1.6rem);
+          color: #6B6B6B;
+          margin-bottom: 3rem;
+          text-align: center;
+          line-height: 1.4;
+          max-width: 56.25rem;
+          padding: 0 1rem;
+          font-weight: 400;
+        }
 
-          &:hover {
-            transform: translateY(-0.25rem);
-            box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.12);
-          }
+        .playbooks-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 1.5rem;
+          width: 100%;
 
           @media (min-width: 768px) {
-            padding: 2.5rem 2rem;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
           }
 
-          .playbook-icon {
-            background: #f72585;
-            border-radius: 1.25rem;
-            width: 4rem;
-            height: 4rem;
+          .playbook-card {
+            background: #1A1A1A;
+            border-radius: 1.5rem;
+            box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.06);
+            padding: 2rem 1.5rem;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 0.25rem 1rem rgba(247, 37, 133, 0.2);
+            align-items: center;
+            border: 0.1875rem solid #404040;
+            transition: all .3s ease;
 
-            @media (min-width: 768px) {
-              width: 5rem;
-              height: 5rem;
+            &:hover {
+              transform: translateY(-0.25rem);
+              border-color: #DF0979;
+              box-shadow: 0 12px 32px #df09794d
+            }
+
+            .playbook-icon {
+              background: #f72585;
+              align-self: center;
+              border-radius: 1.25rem;
+              width: 64px;
+              height: 64px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 0.25rem 1rem rgba(247, 37, 133, 0.2);
+
+              svg {
+                width: 32px;
+                height: 32px;
+              }
+            }
+
+            h3 {
+              font-size: 1.25rem;
+              color: #fff;
+              margin-bottom: .75rem;
+            }
+
+            p {
+              color: #B0B0B0;
+              margin-bottom: 1rem;
+              font-size: .95rem;
+            }
+
+            .persona-badge {
+              display: inline-block;
+              background: #760543;
+              color: #FF55A0;
+              padding: .35rem 1rem;
+              border-radius: 20px;
+              font-size: .8rem;
+              font-weight: 600;
             }
           }
-
-          h3 {
-            font-size: clamp(1.125rem, 3vw, 1.5rem);
-            font-weight: 600;
-            color: #1A1A1A;
-            margin-bottom: 0.75rem;
-            text-align: center;
-          }
-
-          p {
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            color: #6B6B6B;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            line-height: 1.5;
-            font-weight: 400;
-          }
-
-          .persona-badge {
-            background: #f72585;
-            color: #ffffff;
-            border-radius: 1.25rem;
-            padding: 0.5rem 1.5rem;
-            font-weight: 600;
-            font-size: clamp(0.875rem, 2vw, 1rem);
-          }
         }
-      }
 
-      .playbooks-cta {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 3rem;
-
-        .cta-button {
-          background: #f72585;
-          color: #FFFFFF;
-          border: none;
-          border-radius: 2.5rem;
-          padding: 1rem 2rem;
-          font-weight: 600;
-          font-size: clamp(1.125rem, 3vw, 2rem);
-          box-shadow: 0 0.25rem 2rem rgba(247, 37, 133, 0.25);
-          cursor: pointer;
+        .playbooks-cta {
+          width: 100%;
           display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          justify-content: center;
+          margin-top: 3rem;
 
-          &:hover {
-            transform: translateY(-0.125rem);
-            box-shadow: 0 0.5rem 2.5rem rgba(247, 37, 133, 0.35);
-            background: #d11778;
-          }
+          .cta-button {
+            background: #DF0979;
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .3s ease;
+            box-shadow: 0 4px 12px #df09794d;
 
-          @media (min-width: 768px) {
-            padding: 1.5rem 4rem;
+            &:hover {
+              transform: translateY(-0.125rem);
+              box-shadow: 0 0.5rem 2.5rem rgba(247, 37, 133, 0.35);
+              background: #d11778;
+            }
           }
         }
       }
     }
 
     &.navigation-section {
-      background: #FFFFFF;
+      background: transparent;
 
       h2 {
         font-size: clamp(2rem, 6vw, 3rem);
@@ -534,36 +522,26 @@
 
       .navigation-buttons {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1rem;
         width: 100%;
         max-width: 50rem;
 
-        @media (min-width: 768px) {
-          gap: 2rem;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        }
+
 
         button {
-          background: #f72585;
-          color: #FFFFFF;
-          border: none;
-          border-radius: 2.5rem;
-          padding: 1rem 1.5rem;
-          font-weight: 600;
-          font-size: clamp(1rem, 2.5vw, 1.4rem);
-          cursor: pointer;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-          box-shadow: 0 0.125rem 0.75rem rgba(247, 37, 133, 0.2);
+          background: #DF0979;
+          color: #fff;
+          padding: .75rem 1.5rem;
+          border-radius: 25px;
+          text-decoration: none;
+          font-weight: 500;
+          transition: all .3s ease;
 
           &:hover {
             transform: translateY(-0.125rem);
             box-shadow: 0 0.25rem 1rem rgba(247, 37, 133, 0.3);
             background: #d11778;
-          }
-
-          @media (min-width: 768px) {
-            padding: 1.5rem 3rem;
           }
         }
       }
@@ -626,28 +604,29 @@
         p {
           color: #374151;
         }
-      }
 
-      &.playbooks-section {
-        background: #f3f4f6;
+        .play-books {
+          background: #f3f4f6;
 
-        .section-subtitle {
-          color: #4b5563;
-        }
-
-        .playbook-card {
-          background: #ffffff;
-          border-color: #e5e7eb;
-
-          h3 {
-            color: #111827;
+          .section-subtitle {
+            color: #4b5563;
           }
 
-          p {
-            color: #6b7280;
+          .playbook-card {
+            background: #ffffff;
+            border-color: #e5e7eb;
+
+            h3 {
+              color: #111827;
+            }
+
+            p {
+              color: #6b7280;
+            }
           }
         }
       }
+
 
       &.navigation-section {
         background: #ffffff;

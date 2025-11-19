@@ -128,54 +128,53 @@ const Home = () => {
         <p>
           Desvende o futuro da IA na Livelo! Sua jornada para inovar e transformar ideias em realidade começa agora. Aprenda, crie, use e lidere com inteligência artificial.
         </p>
+        <div className="play-books">
+          <h2>PLAYBOOKS PARA TIMES DE PRODUTO</h2>
+          <p className="section-subtitle">
+            Guias práticos para POs e BAs usarem IA no dia a dia
+          </p>
+          <div className="playbooks-grid">
+            <div className="playbook-card">
+              <div className="playbook-icon">
+                <FileText size={48} strokeWidth={2} color="#fff" />
+              </div>
+              <h3>User Stories com IA</h3>
+              <p>Crie stories bem estruturadas 70% mais rápido</p>
+              <span className="persona-badge">Product Owner</span>
+            </div>
+            <div className="playbook-card">
+              <div className="playbook-icon">
+                <Layers size={48} strokeWidth={2} color="#fff" />
+              </div>
+              <h3>Refinamento de Backlog</h3>
+              <p>Analise e priorize com eficiência</p>
+              <span className="persona-badge">Product Owner</span>
+            </div>
+            <div className="playbook-card">
+              <div className="playbook-icon">
+                <MessageCircle size={48} strokeWidth={2} color="#fff" />
+              </div>
+              <h3>Análise de Feedback</h3>
+              <p>Extraia insights automaticamente</p>
+              <span className="persona-badge">Product Owner</span>
+            </div>
+            <div className="playbook-card">
+              <div className="playbook-icon">
+                <CheckCircle size={48} strokeWidth={2} color="#fff" />
+              </div>
+              <h3>Análise de Requisitos</h3>
+              <p>Documente requisitos 65% mais rápido</p>
+              <span className="persona-badge">Business Analyst</span>
+            </div>
+          </div>
+          <div className="playbooks-cta">
+            <button className="cta-button">
+              Ver Todos os Playbooks →
+            </button>
+          </div>
+        </div>
       </section>
 
-      {/* Seção playbooks */}
-      <section className="highlight-section playbooks-section">
-        <h2>PLAYBOOKS PARA TIMES DE PRODUTO</h2>
-        <p className="section-subtitle">
-          Guias práticos para POs e BAs usarem IA no dia a dia
-        </p>
-        <div className="playbooks-grid">
-          <div className="playbook-card">
-            <div className="playbook-icon">
-              <FileText size={48} strokeWidth={2} color="#fff" />
-            </div>
-            <h3>User Stories com IA</h3>
-            <p>Crie stories bem estruturadas 70% mais rápido</p>
-            <span className="persona-badge">Product Owner</span>
-          </div>
-          <div className="playbook-card">
-            <div className="playbook-icon">
-              <Layers size={48} strokeWidth={2} color="#fff" />
-            </div>
-            <h3>Refinamento de Backlog</h3>
-            <p>Analise e priorize com eficiência</p>
-            <span className="persona-badge">Product Owner</span>
-          </div>
-          <div className="playbook-card">
-            <div className="playbook-icon">
-              <MessageCircle size={48} strokeWidth={2} color="#fff" />
-            </div>
-            <h3>Análise de Feedback</h3>
-            <p>Extraia insights automaticamente</p>
-            <span className="persona-badge">Product Owner</span>
-          </div>
-          <div className="playbook-card">
-            <div className="playbook-icon">
-              <CheckCircle size={48} strokeWidth={2} color="#fff" />
-            </div>
-            <h3>Análise de Requisitos</h3>
-            <p>Documente requisitos 65% mais rápido</p>
-            <span className="persona-badge">Business Analyst</span>
-          </div>
-        </div>
-        <div className="playbooks-cta">
-          <button className="cta-button">
-            Ver Todos os Playbooks →
-          </button>
-        </div>
-      </section>
 
       {/* Seção navegação */}
       <section className="highlight-section navigation-section">
