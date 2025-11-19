@@ -8,7 +8,7 @@
   margin: 0 auto;
   padding: 0 1rem;
   font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  
+
   @media (min-width: 768px) {
     padding: 0 2rem;
   }
@@ -22,7 +22,7 @@
     padding: 2rem 0;
     width: 100%;
     text-align: center;
-    
+
     @media (min-width: 1024px) {
       flex-direction: row;
       gap: 5rem;
@@ -42,7 +42,7 @@
         margin-bottom: 1.5rem;
         color: #FFFFFF;
         letter-spacing: -0.02em;
-        
+
         @media (min-width: 768px) {
           margin-bottom: 2rem;
         }
@@ -54,7 +54,7 @@
         line-height: 1.6;
         margin: 0;
         font-weight: 400;
-        
+
         @media (min-width: 1024px) {
           text-align: justify;
         }
@@ -79,7 +79,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
         @media (min-width: 768px) {
           width: clamp(320px, 28vw, 460px);
           height: clamp(480px, 42vw, 680px);
@@ -101,7 +101,7 @@
           left: 0;
           right: 0;
           bottom: 0;
-          background: 
+          background:
             radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.2) 0%, transparent 50%),
             radial-gradient(circle at 70% 70%, rgba(255, 0, 128, 0.2) 0%, transparent 50%);
           animation: pulse 4s ease-in-out infinite;
@@ -110,9 +110,12 @@
         }
 
         @keyframes pulse {
-          0%, 100% {
+
+          0%,
+          100% {
             opacity: 0.6;
           }
+
           50% {
             opacity: 1;
           }
@@ -133,7 +136,7 @@
     .ia-title {
       font-size: clamp(2.5rem, 10vw, 4rem);
       font-weight: 800;
-     background: linear-gradient(45deg, gold, orange);
+      background: linear-gradient(45deg, gold, orange);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -164,30 +167,26 @@
 
   .highlight-section {
     margin: 2rem 0;
-    background: #FFFFFF;
-    border-radius: 1.5rem;
+    background: #2D2D2D;
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 0.125rem 1.5rem rgba(0,0,0,0.08);
+    box-shadow: 0 0.125rem 1.5rem rgba(0, 0, 0, 0.08);
     width: 100%;
-    border: 1px solid #F0F0F0;
-    
+
     @media (min-width: 768px) {
       margin: 3rem 0;
       padding: 3.5rem 2rem;
-      border-radius: 2rem;
     }
 
     h2 {
-      font-size: clamp(1.75rem, 6vw, 2.8rem);
-      font-weight: 700;
-      color: #1A1A1A;
-      margin-bottom: 2rem;
       text-align: center;
-      letter-spacing: -0.02em;
-      
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffff;
+      margin-bottom: 3rem;
+
       @media (min-width: 768px) {
         margin-bottom: 2.5rem;
       }
@@ -195,16 +194,18 @@
 
     .solutions-grid {
       display: flex;
-      flex-direction: column;
-      gap: 2rem;
       align-items: center;
-      justify-content: center;
-      width: 100%;
-      
+      gap: 3rem;
+      background: var(--bg-main);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 3rem;
+
+
       @media (min-width: 1024px) {
         flex-direction: row;
         gap: 3rem;
-        
+
         &.reverse {
           flex-direction: row-reverse;
         }
@@ -215,18 +216,18 @@
         width: 100%;
         max-width: 37.5rem;
         text-align: center;
-        
+
         @media (min-width: 1024px) {
           text-align: left;
         }
 
         p {
           font-size: clamp(1rem, 3vw, 1.35rem);
-          color: #4A4A4A;
+          color: #fff;
           margin-bottom: 1.5rem;
           line-height: 1.6;
           font-weight: 400;
-          
+
           @media (min-width: 1024px) {
             text-align: justify;
           }
@@ -246,7 +247,7 @@
           font-weight: 600;
           font-size: clamp(1rem, 2.5vw, 1.1rem);
           text-decoration: none;
-          
+
           &:hover {
             color: #d11778;
           }
@@ -264,8 +265,8 @@
           width: 100%;
           max-width: 100%;
           border-radius: 1rem;
-          box-shadow: 0 0.25rem 2rem rgba(0,0,0,0.10);
-          
+          box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.10);
+
           @media (min-width: 768px) {
             border-radius: 1.5rem;
           }
@@ -331,7 +332,7 @@
         gap: 2rem;
         margin: 1.5rem 0;
         flex-wrap: wrap;
-        
+
         @media (min-width: 768px) {
           gap: 4rem;
         }
@@ -346,8 +347,8 @@
           video {
             width: 100%;
             border-radius: 1rem;
-            box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.18);
-            
+            box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.18);
+
             @media (min-width: 768px) {
               border-radius: 1.25rem;
             }
@@ -407,7 +408,7 @@
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 1.5rem;
         width: 100%;
-        
+
         @media (min-width: 768px) {
           gap: 2rem;
           grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -416,19 +417,19 @@
         .playbook-card {
           background: #fff;
           border-radius: 1.5rem;
-          box-shadow: 0 0.125rem 1rem rgba(0,0,0,0.06);
+          box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.06);
           padding: 2rem 1.5rem;
           display: flex;
           flex-direction: column;
           align-items: center;
           border: 0.1875rem solid #eee;
           transition: transform 0.2s ease, box-shadow 0.2s ease;
-          
+
           &:hover {
             transform: translateY(-0.25rem);
-            box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.12);
+            box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.12);
           }
-          
+
           @media (min-width: 768px) {
             padding: 2.5rem 2rem;
           }
@@ -443,7 +444,7 @@
             justify-content: center;
             margin-bottom: 1.5rem;
             box-shadow: 0 0.25rem 1rem rgba(247, 37, 133, 0.2);
-            
+
             @media (min-width: 768px) {
               width: 5rem;
               height: 5rem;
@@ -498,13 +499,13 @@
           align-items: center;
           gap: 0.75rem;
           transition: transform 0.2s ease, box-shadow 0.2s ease;
-          
+
           &:hover {
             transform: translateY(-0.125rem);
             box-shadow: 0 0.5rem 2.5rem rgba(247, 37, 133, 0.35);
             background: #d11778;
           }
-          
+
           @media (min-width: 768px) {
             padding: 1.5rem 4rem;
           }
@@ -537,7 +538,7 @@
         gap: 1rem;
         width: 100%;
         max-width: 50rem;
-        
+
         @media (min-width: 768px) {
           gap: 2rem;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -554,13 +555,13 @@
           cursor: pointer;
           transition: transform 0.2s ease, box-shadow 0.2s ease;
           box-shadow: 0 0.125rem 0.75rem rgba(247, 37, 133, 0.2);
-          
+
           &:hover {
             transform: translateY(-0.125rem);
             box-shadow: 0 0.25rem 1rem rgba(247, 37, 133, 0.3);
             background: #d11778;
           }
-          
+
           @media (min-width: 768px) {
             padding: 1.5rem 3rem;
           }
@@ -598,7 +599,7 @@
     .highlight-section {
       background: #f9fafb;
       border-color: #e5e7eb;
-      
+
       h2 {
         color: #111827;
       }
@@ -609,11 +610,11 @@
 
       &.videos-section {
         background: #ffffff;
-        
+
         .videos-subtitle {
           color: #4b5563;
         }
-        
+
         .video-title {
           color: #111827;
         }
@@ -621,7 +622,7 @@
 
       &.journey-section {
         background: #f3f4f6;
-        
+
         p {
           color: #374151;
         }
@@ -629,19 +630,19 @@
 
       &.playbooks-section {
         background: #f3f4f6;
-        
+
         .section-subtitle {
           color: #4b5563;
         }
-        
+
         .playbook-card {
           background: #ffffff;
           border-color: #e5e7eb;
-          
+
           h3 {
             color: #111827;
           }
-          
+
           p {
             color: #6b7280;
           }
@@ -650,7 +651,7 @@
 
       &.navigation-section {
         background: #ffffff;
-        
+
         p {
           color: #4b5563;
         }
@@ -658,7 +659,7 @@
 
       &.seo-section {
         background: #ffffff;
-        
+
         .solution-text p {
           color: #4b5563;
         }

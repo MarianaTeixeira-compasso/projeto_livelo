@@ -19,7 +19,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="ia-footer">
         <h2 className="ia-title">INTELIGÊNCIA<br />ARTIFICIAL</h2>
         <p className="ia-subtitle">TRANSFORME SEU DIA E CRIE O FUTURO</p>
