@@ -17,7 +17,7 @@ const GuiaDesenvolvedor = () => {
           <span className={`tab-pill ${guideTab === 'overview' ? 'active' : ''}`} onClick={() => setGuideTab('overview')}>📘 Overview</span>
           <span className={`tab-pill ${guideTab === 'features' ? 'active' : ''}`} onClick={() => setGuideTab('features')}>⚡ Features</span>
           <span className={`tab-pill ${guideTab === 'setup' ? 'active' : ''}`} onClick={() => setGuideTab('setup')}>⚙️ Setup</span>
-          <span className={`tab-pill ${guideTab === 'troubleshooting' ? 'active' : ''}`} onClick={() => setGuideTab('troubleshooting')}>🔧 Troubleshooting</span>
+          <span className={`tab-pill ${guideTab === 'troubleshooting' ? 'active' : ''}`} onClick={() => setGuideTab('troubleshooting')}>🆘 Troubleshooting</span>
           <span className={`tab-pill ${guideTab === 'sdlc' ? 'active' : ''}`} onClick={() => setGuideTab('sdlc')}>📊 IA no SDLC</span>
         </div>
       </div>
@@ -67,16 +67,16 @@ const GuiaDesenvolvedor = () => {
                 <div className="step-number">1</div>
                 <div className="step-content">
                   <h4>Instale o Amazon Q</h4>
-                  <p><strong>VS Code:</strong> Extensão "Amazon Q"</p>
-                  <p><strong>IntelliJ:</strong> Plugin "Amazon Q"</p>
+                  <p><span className="label-gray">VS Code:</span> Extensão "Amazon Q"</p>
+                  <p><span className="label-gray">IntelliJ:</span> Plugin "Amazon Q"</p>
                 </div>
               </div>
               <div className="step-card">
                 <div className="step-number">2</div>
                 <div className="step-content">
                   <h4>Configure Acesso</h4>
-                  <p><strong>URL:</strong> https://auth-livelo.awsapps.com/start</p>
-                  <p><strong>Região:</strong> sa-east-1</p>
+                  <p><span className="label-gray">URL:</span> https://auth-livelo.awsapps.com/start</p>
+                  <p><span className="label-gray">Região:</span> sa-east-1</p>
                 </div>
               </div>
               <div className="step-card">
@@ -137,7 +137,7 @@ const GuiaDesenvolvedor = () => {
               </div>
             </div>
             <div className="feature-card">
-              <div className="feature-header"><span className="emoji">🧩</span><h3>Rules</h3></div>
+              <div className="feature-header"><span className="emoji">📏</span><h3>Rules</h3></div>
               <p>Define padrões automaticamente para garantir consistência no time</p>
               <div className="chip-row">
                 <span className="chip">Padrões automáticos</span>
@@ -155,7 +155,7 @@ const GuiaDesenvolvedor = () => {
               </div>
             </div>
             <div className="feature-card">
-              <div className="feature-header"><span className="emoji">🛠️</span><h3>Customização</h3></div>
+              <div className="feature-header"><span className="emoji">⚙️</span><h3>Customização</h3></div>
               <p>Personalize o Amazon Q com seu código organizacional</p>
               <div className="chip-row">
                 <span className="chip">Código organizacional</span>
@@ -184,8 +184,8 @@ const GuiaDesenvolvedor = () => {
               </ol>
               <div className="config-box">
                 <h4>Configuração:</h4>
-                <p><strong>URL:</strong> https://auth-livelo.awsapps.com/start</p>
-                <p><strong>Região:</strong> sa-east-1</p>
+                <p><span className="label-gray">URL:</span> https://auth-livelo.awsapps.com/start</p>
+                <p><span className="label-gray">Região:</span> sa-east-1</p>
               </div>
             </div>
 

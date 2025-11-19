@@ -10,6 +10,19 @@
   font-size: 0.95rem;
   font-weight: 400;
   color: #374151;
+
+  /* Barra de rolagem clara para modo claro */
+  &::-webkit-scrollbar {
+    width: 8px;
+    background: #f3f3f3;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f3f3f3;
+  }
   
   .section-heading {
     font-weight: 700;
@@ -35,18 +48,20 @@
     padding-left: 8px;
   }
   
-  .code-line {
-    background: #f8f9fa;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
-    margin: 4px 0;
+
+  .dashboard-title {
+    margin-top: 4px;
+    margin-bottom: 20px;
+    color: #b3b3b3;
+    font-size: 2rem;
   }
-  
+  .amazon-title {
+    margin-top: 4px;
+    margin-bottom: 20px;
+    color: #b3b3b3;
+    font-size: 2rem;
+  }
   .code-block {
-    background: #f8f9fa;
-    padding: 12px;
     border-radius: 6px;
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;

@@ -1,7 +1,12 @@
+// Bold gray label for step and info cards
+.label-gray {
+  color: #4b5563;
+  font-weight: 700;
+}
 // Developer Guide
 .dev-guide { 
   text-align: left; 
-  padding-top: 20px; 
+  padding-top: 4px !important; 
 }
 
 .guide-hero { 
@@ -49,8 +54,8 @@
     cursor: pointer;
     position: relative;
     transition: all 0.2s;
-    font-weight: 500;
-    font-size: 0.98rem;
+      font-weight: 500;
+      font-size: 0.85rem;
 
     &:hover { 
       background: #f3f4f6; 
@@ -84,16 +89,16 @@
   margin-right: auto; 
 
   h2 { 
-    font-size: clamp(1.8rem, 2.8vw, 2.2rem); 
-    margin: 0 0 16px 0; 
+    font-size: clamp(1.4rem, 2vw, 1.7rem); 
+    margin: 0 40px 16px 40px; 
     font-weight: 700; 
     color: #111827; 
   }
 
   > p { 
     color: #6b7280; 
-    margin: 0 0 32px 0; 
-    font-size: 1rem; 
+    margin: 0 40px 32px 40px; 
+    font-size: 0.95rem; 
     line-height: 1.6; 
     text-align: justify; 
   }
@@ -103,7 +108,7 @@
   display: grid; 
   grid-template-columns: repeat(2, 1fr); 
   gap: 24px; 
-  max-width: 1100px; 
+  max-width: 800px; 
   margin: 0 auto; 
 }
 
@@ -595,28 +600,26 @@
 
 // Dark theme
 .main-bg.dark {
-  .guide-subtitle { 
-    color: #6b7280; 
+  .guide-title {
+    color: #fff;
   }
-
+  .guide-subtitle { 
+    color: #9ca3af;
+  }
   .guide-tabs { 
     border-bottom-color: #2a2a2a; 
-
     .tab-pill { 
       color: #9ca3af; 
-
       &:hover { 
         background: #1a1a1a; 
         color: #fff; 
       }
     }
   }
-
   .guide-section {
     h2 { 
       color: #fff; 
     }
-
     > p { 
       color: #9ca3af; 
     }
