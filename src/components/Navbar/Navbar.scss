@@ -1,101 +1,165 @@
-.navbar {
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: #111;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 32px;
-  height: 56px;
+  background: #0a0a0a;
+  height: 64px;
+  z-index: 1000;
+  border-bottom: 1px solid #1a1a1a;
 
-  .navbar-left {
+  .nav-content {
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
+    gap: 2rem;
+    padding: 0 2rem;
+    height: 100%;
   }
 
-  .nav-list {
-    display: flex;
-    gap: 16px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  .nav-link {
+    color: #B0B0B0;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: 0.2s;
+    white-space: nowrap;
 
-    li {
-      border-radius: 8px;
-      transition: all 0.2s;
+    &:hover {
+      color: #fff;
+      background: #1a1a1a;
+    }
 
-      a {
-        display: block;
-        padding: 8px 18px;
-        font-weight: 700;
-        color: #ccc;
-        text-decoration: none;
-        transition: all 0.2s;
-
-        &:hover {
-          color: #fff;
-          background: #222;
-        }
-
-        &.active {
-          background: #d11778;
-          color: #fff;
-        }
-      }
+    &.active {
+      background: #d11778;
+      color: #fff;
     }
   }
 
-  .navbar-right {
-    display: flex;
-    align-items: center;
+  .nav-logo {
+    img {
+      height: 28px;
+      width: auto;
+    }
+  }
 
-    .icon {
-      font-size: 20px;
-      margin-left: 16px;
-      cursor: pointer;
+  .nav-links-desktop {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 4px;
+
+    span {
+      width: 20px;
+      height: 2px;
+      background: #d11778;
+      transition: 0.3s;
+    }
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    color: #B0B0B0;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: 0.2s;
+    margin-left: auto;
+
+    &:hover {
+      color: #fff;
+      background: #1a1a1a;
     }
   }
 }
 
-@media (max-width: 640px) {
-  .navbar {
-    padding: 0 16px;
+@media (max-width: 768px) {
+  .nav {
+    .nav-links-desktop {
+      display: none;
+    }
 
-    .nav-list {
-      gap: 8px;
+    .hamburger {
+      display: flex;
+    }
 
-      li a {
-        padding: 6px 12px;
-      }
+    .theme-toggle {
+      margin-left: 0;
+    }
+  }
+}
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background: #0a0a0a;
+  z-index: 1001;
+  transition: left 0.3s ease;
+  border-right: 1px solid #1a1a1a;
+
+  &.open {
+    left: 0;
+  }
+
+  .mobile-menu-content {
+    padding: 80px 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .mobile-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
+
+  .mobile-nav-link {
+    color: #B0B0B0;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 6px;
+    transition: 0.2s;
+
+    &:hover {
+      color: #fff;
+      background: #1a1a1a;
+    }
+
+    &.active {
+      background: #d11778;
+      color: #fff;
     }
   }
 }
 
-@media (max-width: 520px) {
-  .navbar {
-    flex-wrap: wrap;
-    height: auto;
-    padding: 8px 12px;
-    align-items: flex-start;
-    gap: 8px;
-
-    .navbar-left,
-    .navbar-right {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-
-    .nav-list {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-
-      li a {
-        padding: 6px 10px;
-        font-size: 0.92rem;
-      }
-    }
-  }
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
 }

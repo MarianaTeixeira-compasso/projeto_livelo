@@ -1,5 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 import './Navbar.scss';
+import logoLivelo from '../../assets/logo-livelo.png';
 
 interface NavbarProps {
   theme: 'dark' | 'light';
@@ -8,6 +10,7 @@ interface NavbarProps {
 
 const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
   const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const tabs = [
     { id: '/', label: 'Início' },
@@ -19,41 +22,81 @@ const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
   ];
 
   return (
-    <nav className="navbar">
-      <div className="navbar-left"></div>
-      <ul className="nav-list">
-        {tabs.map(tab => (
-          <li key={tab.id}>
-            <Link 
+    <>
+      <nav className="nav">
+        <div className="nav-content">
+          <button
+            className="hamburger"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div className="nav-logo">
+            <img src={logoLivelo} alt="Livelo" />
+          </div>
+
+          <div className="nav-links-desktop">
+            {tabs.map(tab => (
+              <Link
+                key={tab.id}
+                to={tab.id}
+                className={`nav-link ${location.pathname === tab.id ? 'active' : ''}`}
+              >
+                {tab.label}
+              </Link>
+            ))}
+          </div>
+
+
+
+          <button
+            className="theme-toggle"
+            aria-label="Toggle theme"
+            onClick={toggleTheme}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-sun" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-menu-content">
+          <div className="mobile-logo">
+            <img src={logoLivelo} alt="Livelo" />
+          </div>
+          {tabs.map(tab => (
+            <Link
+              key={tab.id}
               to={tab.id}
-              className={location.pathname === tab.id ? 'active' : ''}
+              className={`mobile-nav-link ${location.pathname === tab.id ? 'active' : ''}`}
+              onClick={() => setMobileMenuOpen(false)}
             >
               {tab.label}
             </Link>
-          </li>
-        ))}
-      </ul>
-      <div className="navbar-right">
-        <span
-          className="icon theme-toggle"
-          role="button"
-          aria-label="Alternar tema"
-          onClick={toggleTheme}
-          title={theme === 'dark' ? 'Tema claro' : 'Tema escuro'}
-        >
-          {theme === 'dark' ? (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2"/>
-              <path d="M12 2V4M12 20V22M4 12H2M6.31412 6.31412L4.8999 4.8999M17.6859 6.31412L19.1001 4.8999M6.31412 17.69L4.8999 19.1042M17.6859 17.69L19.1001 19.1042M22 12H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
-          ) : (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-            </svg>
-          )}
-        </span>
+          ))}
+        </div>
       </div>
-    </nav>
+
+      {mobileMenuOpen && (
+        <div
+          className="mobile-menu-overlay"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+    </>
   );
 };
 
