@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { FileText, BookOpen } from 'lucide-react';
 import RuleCard from '../../components/RuleCard/RuleCard';
 import RuleModal from '../../components/RuleModal/RuleModal';
 import { rules } from '../../data/rules';
@@ -42,10 +41,10 @@ const Rules = () => {
 
       <div className="cards-grid">
         {filteredRules.map((rule, idx) => (
-          <RuleCard 
-            key={idx} 
-            {...rule} 
-            onClick={() => setSelectedRule(idx)} 
+          <RuleCard
+            key={idx}
+            {...rule}
+            onClick={() => setSelectedRule(idx)}
           />
         ))}
       </div>

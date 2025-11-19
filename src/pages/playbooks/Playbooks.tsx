@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { FileText, Layers, Zap, CheckCircle, MessageCircle } from 'lucide-react';
 import PlaybookCard from '../../components/PlaybookCard/PlaybookCard';
 import PlaybookModal from '../../components/PlaybookModal/PlaybookModal';
 import { playbooks } from '../../data/playbooks';
@@ -38,10 +37,10 @@ const Playbooks = () => {
 
       <div className="cards-grid">
         {filteredPlaybooks.map((pb, idx) => (
-          <PlaybookCard 
-            key={idx} 
-            {...pb} 
-            onClick={() => setSelectedPlaybook(playbooks.findIndex(p => p.title === pb.title))} 
+          <PlaybookCard
+            key={idx}
+            {...pb}
+            onClick={() => setSelectedPlaybook(playbooks.findIndex(p => p.title === pb.title))}
           />
         ))}
       </div>

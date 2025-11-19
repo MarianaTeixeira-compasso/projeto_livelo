@@ -10,7 +10,7 @@ interface McpCardProps {
   onClick: () => void;
 }
 
-const McpCard = ({ icon, title, status, description, ide, testedBy, onClick }: McpCardProps) => {
+const McpCard = ({ title, status, description, ide, testedBy, onClick }: McpCardProps) => {
   return (
     <div className="mcp-card-new" onClick={onClick}>
       <div className="mcp-card-header">
