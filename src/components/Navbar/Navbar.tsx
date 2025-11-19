@@ -8,7 +8,7 @@ interface NavbarProps {
   toggleTheme: () => void;
 }
 
-const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
+const Navbar = ({ toggleTheme }: NavbarProps) => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
