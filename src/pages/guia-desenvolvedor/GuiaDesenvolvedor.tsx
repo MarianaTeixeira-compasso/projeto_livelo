@@ -11,7 +11,7 @@ const GuiaDesenvolvedor = () => {
   return (
     <div className="guia-page dev-guide">
       <div className="guide-hero">
-        <h1 className="guide-title"><span className="emoji">🧭</span> Guia do Desenvolvedor</h1>
+        <h1 className="guide-title"><span className="emoji">🚀</span> Guia do Desenvolvedor</h1>
         <p className="guide-subtitle">Guia completo de IA para desenvolvimento na Livelo</p>
         <div className="guide-tabs">
           <span className={`tab-pill ${guideTab === 'overview' ? 'active' : ''}`} onClick={() => setGuideTab('overview')}>📘 Overview</span>
