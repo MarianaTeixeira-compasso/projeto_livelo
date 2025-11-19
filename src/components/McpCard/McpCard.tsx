@@ -16,7 +16,7 @@ const McpCard = ({ icon, title, status, description, ide, testedBy, onClick }: M
       <div className="mcp-card-header">
         <h3>{title}</h3>
         <span className={`status-badge ${status === 'Homologado' ? 'approved' : 'testing'}`}>
-          {status === 'Homologado' ? '✓ Homologado' : '⚠ Em teste'}
+          {status === 'Homologado' ? '✓ Homologado' : '🔬 Em teste'}
         </span>
       </div>
       <p className="mcp-description">{description}</p>

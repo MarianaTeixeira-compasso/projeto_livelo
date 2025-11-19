@@ -20,11 +20,9 @@ const McpModal = ({ mcp, onClose }: McpModalProps) => {
           <div className={mcp.title === 'Jira' ? 'jira-popup-bg' : ''}>
             <p className="feature-subtitle">{mcp.details.subtitle}</p>
             <div className="modal-section">
-              <h4>🎯 Overview</h4>
               <p>{mcp.details.overview}</p>
             </div>
             <div className="modal-section">
-              <h4>⚡ Features</h4>
               <ul>
                 {mcp.details.features.map((feature: string, i: number) => (
                   <li key={i}>{feature}</li>
@@ -32,17 +30,23 @@ const McpModal = ({ mcp, onClose }: McpModalProps) => {
               </ul>
             </div>
             <div className="modal-section">
-              <h4>🚀 Como Usar</h4>
-              <ol className="feature-steps">
-                {mcp.details.howToUse.map((step: string, i: number) => (
-                  <li key={i}>{step}</li>
-                ))}
-              </ol>
+              <div className="feature-steps">
+                {mcp.details.howToUse.map((step: string, i: number) => {
+                  const lines = step.split('\n');
+                  return (
+                    <div key={i} style={{ margin: '1rem 0' }}>
+                      <div style={{ fontWeight: 'bold' }}>{lines[0]}</div>
+                      {lines.slice(1).map((line, lineIndex) => (
+                        <div key={lineIndex}>{line}</div>
+                      ))}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
           <div className="modal-section">
-            <h4>📋 Requisitos</h4>
             <ul>
               {mcp.details.requirements.map((req: string, i: number) => (
                 <li key={i}>{req}</li>
@@ -53,9 +57,6 @@ const McpModal = ({ mcp, onClose }: McpModalProps) => {
           <div className="modal-actions">
             <button className="btn-primary" onClick={() => navigator.clipboard.writeText(mcp.details.installCommand || '')}>
               📋 Copiar Instalação
-            </button>
-            <button className="btn-secondary" onClick={() => window.open(mcp.details.docsUrl, '_blank')}>
-              📖 Documentação
             </button>
           </div>
         </div>

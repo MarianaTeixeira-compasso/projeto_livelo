@@ -83,8 +83,8 @@ Tudo isso diretamente do Amazon Q, sem sair da sua IDE!`,
     }
   },
   {
-    icon: <Palette size={24} strokeWidth={2} />,
-    title: 'Figma',
+    
+    title: 'Figma MCP',
     status: 'Em teste',
     description: 'Integração com Figma para acessar design system e componentes',
     ide: 'VS Code, Amazon Q',
