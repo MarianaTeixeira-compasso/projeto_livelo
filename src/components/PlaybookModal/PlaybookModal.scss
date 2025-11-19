@@ -57,6 +57,12 @@
   }
 
   .modal-close {
+      &:focus,
+      &:active {
+        outline: none;
+        box-shadow: none;
+        border: none;
+      }
     background: none;
     border: none;
     font-size: 32px;
@@ -214,12 +220,18 @@
   }
 
   .copy-button {
+        &:focus,
+        &:active {
+          outline: none;
+          box-shadow: none;
+          border: none;
+        }
     background: #d11778;
     color: #ffffff;
     border: none;
     border-radius: 8px;
-    padding: 12px 32px;
-    font-size: 1rem;
+    padding: 8px 20px;
+    font-size: 0.95rem;
     font-weight: 400;
     cursor: pointer;
     transition: all 0.2s;
@@ -339,8 +351,20 @@
 
 // Dark theme
 .main-bg.dark {
+      .user-stories-bg,
+      .user-stories-bg * {
+        color: #9ca3af !important;
+      }
+    .user-stories-bg {
+      background: #232326 !important;
+      border-radius: 16px;
+    }
+    .prompt-base-block {
+      background: #232326 !important;
+      border-radius: 14px;
+    }
   .modal-content {
-    background: #1a1a1a;
+    background: #18191c;
   }
 
   .modal-header {
@@ -391,7 +415,7 @@
     }
 
     .code-block {
-      background: #111315;
+      background: transparent !important;
       border-color: #2a2a2a;
       color: #e5e7eb;
     }
