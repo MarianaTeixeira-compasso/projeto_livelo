@@ -76,7 +76,7 @@ ${rule.title === 'Amazon Q Learning Files' ?
           {modalTab === 'rule' ? (
             <>
               <div className="user-stories-bg prompt-base-block">
-                <h3>📖 {rule.title}</h3>
+                <h3>📚 {rule.title}</h3>
                 <p>{rule.details.subtitle}</p>
                 
                 <div className="rule-content">
@@ -84,7 +84,7 @@ ${rule.title === 'Amazon Q Learning Files' ?
                     const lines = section.split('\n').filter((l: string) => l.trim());
                     if (lines.length === 0) return null;
                     
-                    if (idx === 0 && lines.length <= 2 && (lines[0].includes('Guia de Estilo Markdown') || lines[0].includes('Amazon Q Learning Files') || lines[0].match(/^📖/))) {
+                    if (idx === 0 && lines.length <= 2 && (lines[0].includes('Guia de Estilo Markdown') || lines[0].includes('Amazon Q Learning Files') || lines[0].match(/^📚/))) {
                       return null;
                     }
                     

@@ -163,6 +163,9 @@
       color: #9ca3af;
     }
 
+    .playbook-icon {
+      background: #7E0543 !important;
+    }
     .playbook-tags {
       .playbook-tag {
         background: #2a2a2a;
@@ -170,8 +173,15 @@
         border-color: #3a3a3a;
 
         &.playbook-tag-highlight {
-          background: #ff0080 !important;
-          color: #7E0543;
+          background: #7E0543 !important;
+          color: #FF3BA0 !important;
+          font-weight: 700 !important;
+          border-color: transparent;
+        }
+
+        &.playbook-tag-owner {
+          background: #7E0543 !important;
+          color: #FF3BA0 !important;
           font-weight: 700 !important;
           border-color: transparent;
         }
