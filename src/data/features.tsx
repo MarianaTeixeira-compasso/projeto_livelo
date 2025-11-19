@@ -4,7 +4,7 @@ export const featuresDetails = [
     title: 'Chat e Conversação',
     description: 'Como usar o chat do Amazon Q para interagir com seu código',
     subtitle: '💬 Chat e Conversação',
-    overview: `O chat do Amazon Q permite interação natural com seu código através de conversas em linguagem natural. É a interface principal para fazer perguntas, solicitar código e obter explicações.
+    overview: `Como usar o chat do Amazon Q para interagir com seu código
 
 🎯 Overview
 
@@ -12,61 +12,61 @@ O chat do Amazon Q permite interação natural com seu código através de conve
 
 🚀 Como Usar
 
-1. Abrir o Chat
+Abrir o Chat
 
-VS Code: Painel lateral do Amazon Q
-IntelliJ: Janela de ferramentas Amazon Q
-CLI: q chat
+• VS Code: Painel lateral do Amazon Q
+• IntelliJ: Janela de ferramentas Amazon Q
+• CLI: q chat
 
-2. Fazer Perguntas
+Fazer Perguntas
 
 Digite perguntas em linguagem natural:
 
-"Explique este código"
-"Como posso otimizar esta função?"
-"Crie testes para esta classe"
-"Refatore este método seguindo SOLID"
+• "Explique este código"
+• "Como posso otimizar esta função?"
+• "Crie testes para esta classe"
+• "Refatore este método seguindo SOLID"
 
-3. Adicionar Contexto
+Adicionar Contexto
 
 Use @ para referenciar arquivos específicos:
 
-"Explique o @UserService.java"
-"Compare @UserController.java com @UserService.java"
-"Analise todos os arquivos em @src/main/java/com/livelo/user/"
+• "Explique o @UserService.java"
+• "Compare @UserController.java com @UserService.java"
+• "Analise todos os arquivos em @src/main/java/com/livelo/user/"
 
 💡 Tipos de Interação
 
 Explicação de Código
 
-"O que faz este método?"
-"Explique a lógica desta classe"
-"Como funciona este algoritmo?"
+• "O que faz este método?"
+• "Explique a lógica desta classe"
+• "Como funciona este algoritmo?"
 
 Geração de Código
 
-"Crie um service para gerenciar usuários"
-"Implemente um endpoint REST para cadastro"
-"Gere um DTO para esta entidade"
+• "Crie um service para gerenciar usuários"
+• "Implemente um endpoint REST para cadastro"
+• "Gere um DTO para esta entidade"
 
 Refatoração
 
-"Refatore este código seguindo Clean Code"
-"Aplique padrão Strategy nesta classe"
-"Extraia esta lógica para um método separado"
+• "Refatore este código seguindo Clean Code"
+• "Aplique padrão Strategy nesta classe"
+• "Extraia esta lógica para um método separado"
 
 Debug e Troubleshooting
 
-"Por que este código não funciona?"
-"Como resolver este erro de NullPointer?"
-"Otimize esta query que está lenta"
+• "Por que este código não funciona?"
+• "Como resolver este erro de NullPointer?"
+• "Otimize esta query que está lenta"
 
 🎯 Comandos Especiais
 
 Referências de Contexto
 
 | Comando | Descrição | Exemplo |
-|---------|-----------|---------|
+|---------|-----------|----------|
 | @arquivo.java | Referencia arquivo específico | @UserService.java |
 | @pasta/ | Referencia pasta inteira | @src/main/java/ |
 | @workspace | Contexto do workspace | Automático |
@@ -74,7 +74,7 @@ Referências de Contexto
 Comandos de Chat
 
 | Comando | Descrição |
-|---------|-----------|
+|---------|----------|
 | /clear | Limpa histórico do chat |
 | /help | Mostra ajuda |
 | /explain | Força modo explicação |
@@ -93,10 +93,10 @@ Output:
 
 Analisando o UserService.java, identifiquei algumas oportunidades de melhoria:
 
-1. **Injeção de Dependência**: Use constructor injection em vez de @Autowired
-2. **Validação**: Adicione validação de entrada nos métodos públicos
-3. **Tratamento de Erro**: Implemente tratamento específico para UserNotFoundException
-4. **Logs**: Adicione logs estruturados para auditoria
+1. Injeção de Dependência: Use constructor injection em vez de @Autowired
+2. Validação: Adicione validação de entrada nos métodos públicos
+3. Tratamento de Erro: Implemente tratamento específico para UserNotFoundException
+4. Logs: Adicione logs estruturados para auditoria
 
 Aqui está uma versão refatorada:
 [código melhorado]
@@ -122,16 +122,16 @@ Use Exemplos
 
 Tipos de Perguntas Mais Comuns
 
-Explicação de código (40%)
-Geração de código (30%)
-Debug e troubleshooting (20%)
-Refatoração (10%)
+• Explicação de código (40%)
+• Geração de código (30%)
+• Debug e troubleshooting (20%)
+• Refatoração (10%)
 
 Taxa de Satisfação
 
-Explicações: 95%
-Código gerado: 85%
-Soluções de debug: 80%`,
+• Explicações: 95%
+• Código gerado: 85%
+• Soluções de debug: 80%`,
     howToUse: [
       'Abra o Amazon Q no VS Code',
       'Digite perguntas em linguagem natural',

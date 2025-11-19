@@ -18,7 +18,7 @@
   }
 
   .prompt-icon {
-    background: #ff3ba0;
+    background: linear-gradient(135deg, #FF0080 0%, #FF3BA0 100%);
     color: #fff;
     width: 48px;
     height: 48px;
@@ -44,8 +44,8 @@
     align-items: center;
 
     .prompt-badge {
-      background: #ff3ba0;
-      color: #8b0048;
+      background: linear-gradient(135deg, #FF0080 0%, #FF3BA0 100%);
+      color: #7E0543;
       border-radius: 20px;
       padding: 5px 12px;
       font-size: 0.72rem;
@@ -84,6 +84,37 @@
 
     .prompt-desc {
       color: #9ca3af;
+    }
+
+    .prompt-icon {
+      background: #7E0543 !important;
+    }
+    .prompt-tags {
+      .prompt-tag {
+        background: #2a2a2a;
+        color: #9ca3af;
+        border-color: #3a3a3a;
+
+        &.prompt-tag-highlight {
+          background: #7E0543 !important;
+          color: #FF3BA0 !important;
+          font-weight: 700 !important;
+          border-color: transparent;
+        }
+
+        &.prompt-tag-owner {
+          background: #7E0543 !important;
+          color: #FF3BA0 !important;
+          font-weight: 700 !important;
+          border-color: transparent;
+        }
+
+        &.prompt-tag-easy {
+          background: #2a2a2a !important;
+          color: #9ca3af !important;
+          border: none !important;
+        }
+      }
     }
   }
 }
