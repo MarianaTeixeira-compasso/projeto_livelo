@@ -49,6 +49,15 @@ const McpModal = ({ mcp, onClose }: McpModalProps) => {
               ))}
             </ul>
           </div>
+
+          <div className="modal-actions">
+            <button className="btn-primary" onClick={() => navigator.clipboard.writeText(mcp.details.installCommand || '')}>
+              📋 Copiar Instalação
+            </button>
+            <button className="btn-secondary" onClick={() => window.open(mcp.details.docsUrl, '_blank')}>
+              📖 Documentação
+            </button>
+          </div>
         </div>
       </div>
     </div>
