@@ -66,7 +66,13 @@ const PromptModal = ({ prompt, onClose }: PromptModalProps) => {
                     <h4>📊 Resultados</h4>
                     <ul>
                       {prompt.details.results.map((r: string, i: number) => (
-                        <li key={i}>{r}</li>
+                        <li key={i}>
+                          {r.includes('Observabilidade')
+                            ? <><strong>Observabilidade</strong>{r.replace('Observabilidade', '')}</>
+                            : r.includes('Organização')
+                              ? <><strong>Organização</strong>{r.replace('Organização', '')}</>
+                              : r}
+                        </li>
                       ))}
                     </ul>
                   </div>
