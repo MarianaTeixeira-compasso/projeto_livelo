@@ -21,11 +21,17 @@ const PlaybookCard = ({ icon, title, persona, speed, description, tags, onClick 
       </div>
       <p className="playbook-desc">{description}</p>
       <div className="playbook-tags">
-        {tags.map((tag: string, idx: number) => (
-          <span key={idx} className={`playbook-tag ${idx === 1 ? 'playbook-tag-highlight' : ''}`}>
-            {tag}
-          </span>
-        ))}
+        {tags.map((tag: string, idx: number) => {
+          let extraClass = '';
+          if (tag === 'Fácil') extraClass = 'playbook-tag-easy';
+          if (tag === 'Médio') extraClass = 'playbook-tag-medium';
+          if (idx === 1) extraClass += ' playbook-tag-highlight';
+          return (
+            <span key={idx} className={`playbook-tag${extraClass ? ' ' + extraClass : ''}`}>
+              {tag}
+            </span>
+          );
+        })}
       </div>
     </div>
   );
