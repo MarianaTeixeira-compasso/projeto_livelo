@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Rocket, TestTube, Settings, Bot, Wrench, FileText, Code2, Activity } from 'lucide-react';
 import FeatureCard from '../../components/FeatureCard/FeatureCard';
 import FeatureModal from '../../components/FeatureModal/FeatureModal';
 import { featuresDetails } from '../../data/features';
@@ -11,7 +12,13 @@ const GuiaDesenvolvedor = () => {
   return (
     <div className="guia-page dev-guide">
       <div className="guide-hero">
-        <h1 className="guide-title"><span className="emoji">🚀</span> Guia do Desenvolvedor</h1>
+        <h1 className="guide-title">
+          {/* Rocket emoji removido, apenas SVG permanece */}
+          <span style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: 6, marginRight: 6 }}>
+            <Rocket size={32} color="#111827" strokeWidth={2.2} />
+          </span>
+          Guia do Desenvolvedor
+        </h1>
         <p className="guide-subtitle">Guia completo de IA para desenvolvimento na Livelo</p>
         <div className="guide-tabs">
           <span className={`tab-pill ${guideTab === 'overview' ? 'active' : ''}`} onClick={() => setGuideTab('overview')}>📘 Overview</span>
@@ -116,51 +123,81 @@ const GuiaDesenvolvedor = () => {
 
       {guideTab === 'features' && (
         <section className="guide-section">
-          <h2>Features Principais</h2>
+          <h2>
+            <span style={{ verticalAlign: 'middle', marginRight: 8 }}>⚡</span>
+            Features Principais
+          </h2>
           <div className="feature-cards-grid">
-            <div className="feature-card">
-              <div className="feature-header"><span className="emoji">💬</span><h3>Chat e Conversação</h3></div>
-              <p>Interação natural com código para explicações, geração e debug</p>
-              <div className="chip-row">
-                <span className="chip">Linguagem natural</span>
-                <span className="chip">Contexto inteligente</span>
-                <span className="chip">Comandos especiais</span>
+              <div className="feature-card">
+                <div className="feature-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                  <span className="emoji" style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+                    <svg className="chat-icon-svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.5 21.5C4.5 19.5 2.5 16.5 2.5 13C2.5 7.75 7.25 3.5 14 3.5C20.75 3.5 25.5 7.75 25.5 13C25.5 18.25 20.75 22.5 14 22.5C13.1 22.5 12.22 22.42 11.37 22.27C10.7 22.15 9.99 22.19 9.36 22.41L7.5 23V21.5Z" stroke="#222" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
+                  <h3 style={{ marginTop: 6 }}>Chat e Conversação</h3>
+                </div>
+                <p>Interação natural com código para explicações, geração e debug</p>
+                <div className="chip-row">
+                  <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Linguagem natural</span>
+                  <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Contexto inteligente</span>
+                  <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Comandos especiais</span>
+                </div>
               </div>
-            </div>
             <div className="feature-card">
-              <div className="feature-header"><span className="emoji">🧪</span><h3>Testes Unitários</h3></div>
+              <div className="feature-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <span className="emoji" style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+                  <TestTube size={28} strokeWidth={2} className="feature-icon test-icon-svg" />
+                </span>
+                <h3 style={{ marginTop: 6 }}>Testes Unitários</h3>
+              </div>
               <p>Geração automática de testes para acelerar desenvolvimento</p>
               <div className="chip-row">
-                <span className="chip">Geração automática</span>
-                <span className="chip">Mocks inteligentes</span>
-                <span className="chip">Múltiplos frameworks</span>
+                <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Geração automática</span>
+                <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Mocks inteligentes</span>
+                <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Múltiplos frameworks</span>
               </div>
             </div>
             <div className="feature-card">
-              <div className="feature-header"><span className="emoji">📏</span><h3>Rules</h3></div>
+              <div className="feature-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <span className="emoji" style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+                  <Settings size={28} strokeWidth={2} className="feature-icon rules-icon-svg" />
+                </span>
+                <h3 style={{ marginTop: 6 }}>Rules</h3>
+              </div>
               <p>Define padrões automaticamente para garantir consistência no time</p>
               <div className="chip-row">
-                <span className="chip">Padrões automáticos</span>
-                <span className="chip">Arquivos Markdown</span>
-                <span className="chip">Contexto global</span>
+                <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Padrões automáticos</span>
+                <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Arquivos Markdown</span>
+                <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Contexto global</span>
               </div>
             </div>
             <div className="feature-card">
-              <div className="feature-header"><span className="emoji">🤖</span><h3>Custom Agents</h3></div>
+              <div className="feature-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <span className="emoji" style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+                  <Bot size={28} strokeWidth={2} className="feature-icon custom-agents-icon-svg" />
+                </span>
+                <h3 style={{ marginTop: 6 }}>Custom Agents</h3>
+              </div>
               <p>Assistentes personalizáveis para workflows especializados</p>
               <div className="chip-row">
-                <span className="chip">Workflows específicos</span>
-                <span className="chip">Ferramentas pré-configuradas</span>
-                <span className="chip">Contexto personalizado</span>
+                <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Workflows específicos</span>
+                <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Ferramentas pré-configuradas</span>
+                <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Contexto personalizado</span>
               </div>
             </div>
             <div className="feature-card">
-              <div className="feature-header"><span className="emoji">⚙️</span><h3>Customização</h3></div>
+              <div className="feature-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <span className="emoji" style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+                  <Wrench size={28} strokeWidth={2} className="feature-icon customizacao-icon-svg" />
+                </span>
+                <h3 style={{ marginTop: 6 }}>Customização</h3>
+              </div>
               <p>Personalize o Amazon Q com seu código organizacional</p>
               <div className="chip-row">
-                <span className="chip">Código organizacional</span>
-                <span className="chip">Sugestões personalizadas</span>
-                <span className="chip">Integração com repositórios</span>
+                <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Código organizacional</span>
+                <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Sugestões personalizadas</span>
+                <span className="chip" style={{ color: '#7E0543', fontWeight: 'bold' }}>Integração com repositórios</span>
               </div>
             </div>
           </div>
@@ -308,7 +345,7 @@ const GuiaDesenvolvedor = () => {
             <div className="sdlc-card">
               <div className="sdlc-header">
                 <div className="sdlc-icon" style={{background: '#ff0080'}}>
-                  <span className="emoji">📄</span>
+                  <FileText size={32} color="#fff" strokeWidth={2.2} />
                 </div>
                 <div className="sdlc-title-group">
                   <h3>Refinamento da Atividade</h3>
@@ -317,20 +354,20 @@ const GuiaDesenvolvedor = () => {
               </div>
               <div className="sdlc-tools">
                 <div className="tool-item">
-                  <span>MCP Jira</span>
+                  <span style={{ fontWeight: 'bold' }}>MCP Jira</span>
                   <span className="tool-icon">🔌</span>
                 </div>
                 <div className="tool-item">
-                  <span>Prompts de análise</span>
-                  <span className="tool-icon">🎨</span>
+                  <span style={{ fontWeight: 'bold' }}>Prompts de análise</span>
+                  <span className="tool-icon">📝</span>
                 </div>
                 <div className="tool-item">
-                  <span>Amazon Q Chat</span>
+                  <span style={{ fontWeight: 'bold' }}>Amazon Q Chat</span>
                   <span className="tool-icon">⚡</span>
                 </div>
                 <div className="tool-item">
-                  <span>Critérios de aceite</span>
-                  <span className="tool-icon">🎨</span>
+                  <span style={{ fontWeight: 'bold' }}>Critérios de aceite</span>
+                  <span className="tool-icon">📝</span>
                 </div>
               </div>
             </div>
@@ -338,7 +375,7 @@ const GuiaDesenvolvedor = () => {
             <div className="sdlc-card">
               <div className="sdlc-header">
                 <div className="sdlc-icon" style={{background: '#ff0080'}}>
-                  <span className="emoji">💻</span>
+                  <Code2 size={32} color="#fff" strokeWidth={2.2} />
                 </div>
                 <div className="sdlc-title-group">
                   <h3>Desenvolvimento</h3>
@@ -347,19 +384,19 @@ const GuiaDesenvolvedor = () => {
               </div>
               <div className="sdlc-tools">
                 <div className="tool-item">
-                  <span>Amazon Q Code Gen</span>
+                  <span style={{ fontWeight: 'bold' }}>Amazon Q Code Gen</span>
                   <span className="tool-icon">⚡</span>
                 </div>
                 <div className="tool-item">
-                  <span>Rules (.amazonq/rules/)</span>
+                  <span style={{ fontWeight: 'bold' }}>Rules (.amazonq/rules/)</span>
                   <span className="tool-icon">⚡</span>
                 </div>
                 <div className="tool-item">
-                  <span>Prompts customizados</span>
-                  <span className="tool-icon">🎨</span>
+                  <span style={{ fontWeight: 'bold' }}>Prompts customizados</span>
+                  <span className="tool-icon">📝</span>
                 </div>
                 <div className="tool-item">
-                  <span>Análise de estrutura</span>
+                  <span style={{ fontWeight: 'bold' }}>Análise de estrutura</span>
                   <span className="tool-icon">⚡</span>
                 </div>
               </div>
@@ -368,7 +405,7 @@ const GuiaDesenvolvedor = () => {
             <div className="sdlc-card">
               <div className="sdlc-header">
                 <div className="sdlc-icon" style={{background: '#ff0080'}}>
-                  <span className="emoji">🧪</span>
+                  <TestTube size={32} color="#fff" strokeWidth={2.2} />
                 </div>
                 <div className="sdlc-title-group">
                   <h3>Testes</h3>
@@ -377,19 +414,19 @@ const GuiaDesenvolvedor = () => {
               </div>
               <div className="sdlc-tools">
                 <div className="tool-item">
-                  <span>Testes unitários auto</span>
+                  <span style={{ fontWeight: 'bold' }}>Testes unitários auto</span>
                   <span className="tool-icon">⚡</span>
                 </div>
                 <div className="tool-item">
-                  <span>Cypress automation</span>
-                  <span className="tool-icon">🎨</span>
+                  <span style={{ fontWeight: 'bold' }}>Cypress automation</span>
+                  <span className="tool-icon">📝</span>
                 </div>
                 <div className="tool-item">
-                  <span>Cobertura de testes</span>
-                  <span className="tool-icon">🎨</span>
+                  <span style={{ fontWeight: 'bold' }}>Cobertura de testes</span>
+                  <span className="tool-icon">📝</span>
                 </div>
                 <div className="tool-item">
-                  <span>Amazon Q Test Gen</span>
+                  <span style={{ fontWeight: 'bold' }}>Amazon Q Test Gen</span>
                   <span className="tool-icon">⚡</span>
                 </div>
               </div>
@@ -398,7 +435,7 @@ const GuiaDesenvolvedor = () => {
             <div className="sdlc-card">
               <div className="sdlc-header">
                 <div className="sdlc-icon" style={{background: '#ff0080'}}>
-                  <span className="emoji">📈</span>
+                  <Activity size={32} color="#fff" strokeWidth={2.2} />
                 </div>
                 <div className="sdlc-title-group">
                   <h3>Monitoramento</h3>
@@ -407,20 +444,20 @@ const GuiaDesenvolvedor = () => {
               </div>
               <div className="sdlc-tools">
                 <div className="tool-item">
-                  <span>MCP Dynatrace</span>
+                  <span style={{ fontWeight: 'bold' }}>MCP Dynatrace</span>
                   <span className="tool-icon">🔌</span>
                 </div>
                 <div className="tool-item">
-                  <span>Dashboard prompts</span>
-                  <span className="tool-icon">🎨</span>
+                  <span style={{ fontWeight: 'bold' }}>Dashboard prompts</span>
+                  <span className="tool-icon">📝</span>
                 </div>
                 <div className="tool-item">
-                  <span>Análise de logs</span>
+                  <span style={{ fontWeight: 'bold' }}>Análise de logs</span>
                   <span className="tool-icon">⚡</span>
                 </div>
                 <div className="tool-item">
-                  <span>Investigação incidentes</span>
-                  <span className="tool-icon">🎨</span>
+                  <span style={{ fontWeight: 'bold' }}>Investigação incidentes</span>
+                  <span className="tool-icon">📝</span>
                 </div>
               </div>
             </div>
