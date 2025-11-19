@@ -140,7 +140,7 @@ Taxa de Satisfação
     ]
   },
   {
-    icon: '🧩',
+    icon: '📏',
     title: 'Rules',
     description: 'Defina regras que o Amazon Q deve seguir automaticamente',
     subtitle: '📏 Rules',
@@ -374,7 +374,7 @@ Controle de Segurança
     ]
   },
   {
-    icon: '🛠️',
+    icon: '⚙️',
     title: 'Customização',
     description: 'Personalize o Amazon Q com o código da sua organização para sugestões específicas',
     subtitle: '⚙️ Customização do Amazon Q',

@@ -1,3 +1,67 @@
+/* Ícones dos cards de features: brancos no dark, pretos no light */
+.feature-icon {
+  color: #222;
+}
+
+@media (prefers-color-scheme: dark) {
+  .feature-icon {
+    color: #fff;
+  }
+}
+.feature-card .emoji .test-icon-svg,
+.feature-card .emoji .rules-icon-svg,
+.feature-card .emoji .custom-agents-icon-svg,
+.feature-card .emoji .customizacao-icon-svg {
+  color: #222;
+}
+.dark-theme .feature-card .emoji .test-icon-svg,
+.dark-theme .feature-card .emoji .rules-icon-svg,
+.dark-theme .feature-card .emoji .custom-agents-icon-svg,
+.dark-theme .feature-card .emoji .customizacao-icon-svg {
+  color: #fff !important;
+}
+.feature-card .emoji svg {
+  color: #222;
+}
+.dark-theme .feature-card .emoji svg {
+  color: #fff !important;
+}
+.dark-theme .setup-card {
+  background: #18191a;
+  border: 1px solid #333;
+}
+.dark-theme .config-box {
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+}
+.config-box {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px 16px;
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+.setup-card h4 {
+  color: #111827;
+}
+.dark-theme .setup-card h4 {
+  color: #fff;
+}
+.chip {
+  background: #F97AB3;
+}
+/* Modo dark para o ícone de chat */
+.dark-theme .chat-icon-svg path {
+  stroke: #fff !important;
+}
+/* Modo dark para chips na aba Features */
+.dark-theme .chip {
+  background: #7E0543 !important;
+  color: #FF0A8C !important;
+  font-weight: bold;
+}
 // Bold gray label for step and info cards
 .label-gray {
   color: #4b5563;
@@ -320,11 +384,18 @@
   margin-right: auto; 
 }
 
-.setup-card { 
-  background: #111315; 
-  border: 1px solid #2a2a2a; 
-  border-radius: 12px; 
-  padding: 20px 18px; 
+.setup-card {
+  background: #e5e7eb; /* cinza claro padrão */
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 16px;
+}
+
+.dark-theme .setup-card,
+.main-bg.dark .setup-card {
+  background: #333 !important; /* cinza escuro para dark */
 }
 
 .setup-header { 
@@ -457,6 +528,7 @@
 .sdlc-subtitle { 
   color: #9ca3af; 
   margin: 0 0 40px 0; 
+  text-align: center;
 }
 
 .sdlc-carousel { 
@@ -471,7 +543,7 @@
   }
 
   &::-webkit-scrollbar-track { 
-    background: #1a1c1e; 
+    background: #f5f5f7; /* cinza claro padrão */
     border-radius: 10px; 
   }
 
@@ -481,13 +553,22 @@
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .sdlc-carousel::-webkit-scrollbar-track {
+    background: #e0e0e0 !important; /* cinza claro no dark */
+  }
+  .sdlc-carousel::-webkit-scrollbar-thumb {
+    background: #bdbdbd !important; /* cinza claro no dark */
+  }
+}
+
 .sdlc-card { 
-  min-width: 340px; 
+  min-width: 260px; /* largura menor */
   flex: 1; 
   background: #f5f5f7; 
   border: 1px solid #e0e0e0; 
   border-radius: 16px; 
-  padding: 28px 24px; 
+  padding: 24px 16px; /* padding ajustado para proporcionalidade */
   scroll-snap-align: start; 
   text-align: left; 
 }
@@ -522,12 +603,18 @@
 
 .efficiency-badge { 
   background: #ff0080; 
-  color: #fff; 
+  color: #7E0543; /* cor rosa escura no modo claro */
   padding: 4px 10px; 
   border-radius: 999px; 
   font-size: 0.75rem; 
   font-weight: 600; 
   display: inline-block; 
+}
+
+@media (prefers-color-scheme: dark) {
+  .efficiency-badge {
+    color: #fff !important;
+  }
 }
 
 .sdlc-tools { 
@@ -560,7 +647,7 @@
 
 .progress-bar { 
   height: 6px; 
-  background: #444; 
+  background: #ffffff; 
   border-radius: 10px; 
 }
 
