@@ -10,38 +10,47 @@
 }
 
 .guide-title { 
-  font-size: clamp(2.2rem, 3.5vw, 3rem); 
-  margin: 0 0 8px 0; 
-  font-weight: 800; 
-  display: flex; 
-  align-items: center; 
-  gap: 12px; 
-  justify-content: center; 
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
 }
 
 .guide-subtitle { 
-  color: #9ca3af; 
-  margin: 0 0 24px 0; 
-  font-size: 1.05rem; 
+  color: #4b5563;
+  font-size: 1.1rem;
+  margin-bottom: 56px;
+// Dark theme
+.main-bg.dark .guide-title {
+  color: #fff;
+}
+.main-bg.dark .guide-subtitle {
+  color: #9ca3af;
+}
 }
 
 .guide-tabs { 
-  display: flex; 
-  gap: 24px; 
-  align-items: center; 
-  justify-content: center; 
-  border-bottom: 1px solid #e5e7eb; 
-  padding-bottom: 12px; 
-  flex-wrap: wrap; 
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+  flex-wrap: wrap;
 
   .tab-pill { 
-    color: #6b7280; 
-    padding: 8px 12px; 
-    border-radius: 6px; 
-    cursor: pointer; 
-    position: relative; 
-    transition: all 0.2s; 
-    font-weight: 500; 
+    color: #6b7280;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+    font-weight: 500;
+    font-size: 0.98rem;
 
     &:hover { 
       background: #f3f4f6; 
